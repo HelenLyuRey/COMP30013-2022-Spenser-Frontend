@@ -31,17 +31,13 @@ const Dashboard = () => {
    
     return (
         <div>
-            <div class="background"></div>
+            {/* <div class="background"></div> */}
 
             <div class="top-container">
                 <div class="title" >Welcome to Spenser</div>
                 {/* <button id="start-btn" class="simple-btn" onClick={clickStart}>{buttonText}</button> */}
             </div>
 
-            <div class="visualization-container" >
-                {/* <canvas class="try" id="output" width="250" height="200" ></canvas> */}
-                <iframe class="frame" src="http://localhost:8080/"></iframe>
-            </div>
         </div>
     );
 

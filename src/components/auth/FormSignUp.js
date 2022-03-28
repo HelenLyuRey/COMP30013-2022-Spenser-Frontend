@@ -17,12 +17,12 @@ const FormSignUp = ({ submitForm }) => {
 	);
 
 	async function authSubmitSignUpHandler() {
+		console.log("in here")
 		await conn
 			.post("/auth/signup", {
-				firstname: values.firstname,
-				lastname: values.lastname,
 				email: values.email,
 				password: values.password,
+				name: values.name,
 			})
 			.then((user) => {
 				alert(
@@ -33,10 +33,9 @@ const FormSignUp = ({ submitForm }) => {
 				console.log(e);
 			});
 		if (
-			values.firstname &&
-			values.lastname &&
 			values.email &&
-			values.password
+			values.password &&
+			values.name
 		) {
 			history.push("/auth/login");
 		}
@@ -47,30 +46,8 @@ const FormSignUp = ({ submitForm }) => {
 			<form className="form-signup" onSubmit={handleSubmit}>
 				<div className="form-box">
 					<h4>Create a new account</h4>
-					<div className="form-inputs">
-						<input
-							type="text"
-							name="firstname"
-							className="form-input"
-							placeholder="First name"
-							value={values.firstname}
-							onChange={handleChange}
-						/>
-						{errors.firstname && <p>{errors.firstname}</p>}
-					</div>
 
-					<div className="form-inputs">
-						<input
-							type="text"
-							name="lastname"
-							className="form-input"
-							placeholder="Last name"
-							value={values.lastname}
-							onChange={handleChange}
-						/>
-						{errors.lastname && <p>{errors.lastname}</p>}
-					</div>
-
+	
 					<div className="form-inputs">
 						<input
 							type="text"
@@ -93,6 +70,18 @@ const FormSignUp = ({ submitForm }) => {
 							onChange={handleChange}
 						/>
 						{errors.password && <p>{errors.password}</p>}
+					</div>
+
+					<div className="form-inputs">
+						<input
+							type="text"
+							name="name"
+							className="form-input"
+							placeholder="Enter your name here"
+							value={values.name}
+							onChange={handleChange}
+						/>
+						{errors.name && <p>{errors.name}</p>}
 					</div>
 
 					<button

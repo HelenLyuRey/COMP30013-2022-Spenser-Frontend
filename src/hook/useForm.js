@@ -6,10 +6,9 @@ import { useState, useEffect } from "react";
 const useForm = (callback, validate) => {
 	// const history = useHistory();
 	const [values, setValues] = useState({
-		firstname: "",
-		lastname: "",
 		email: "",
 		password: "",
+		name:""
 	});
 
 	const [errors, setErrors] = useState({});
@@ -30,27 +29,11 @@ const useForm = (callback, validate) => {
 		e.preventDefault();
 		setErrors(validate(values));
 		setIsSumitting(true);
-		// const reponse = await fetch('http://http://localhost:3000/signup', {
-		//     method: 'POST',
-		//     headers: {'Content-Type': 'application/json'},
-		//     body: JSON.stringify({
-		//         firstname,
-		//         lastname,
-		//         email,
-		//         password
-		//     })
-		// })
-
-		// const content = await reponse.json();
-
-		// console.log(content)
 	};
 
 	// make sure when clicking on submit, it need the required field filled out
 	useEffect(() => {
 		if (Object.keys(errors).length === 0 && isSubmitting) {
-			// console.log(values.firstname)
-			// // history.push('/success') // redirect
 			callback();
 		}
 	}, [errors, isSubmitting, callback]);

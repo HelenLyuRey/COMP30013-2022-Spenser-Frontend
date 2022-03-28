@@ -1,12 +1,9 @@
 export default function validateInfo(values){
     let errors={}
 
-    if(!values.firstname){
-        errors.firstname = "Firstname required"
-    }
 
-    if(!values.lastname){
-        errors.lastname = "Lastname required"
+    if(!values.name){
+        errors.name = "Name required"
     }
 
     //Check validate email

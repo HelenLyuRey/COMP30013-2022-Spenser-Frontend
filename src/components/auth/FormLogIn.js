@@ -80,10 +80,9 @@ const FormLogIn = ({ submitForm }) => {
 		console.log(response);
 		await conn
 			.post("/auth/signup", {
-				firstname: response.profileObj.givenName,
-				lastname: response.profileObj.familyName,
 				email: response.profileObj.email,
 				password: response.profileObj.googleId,
+				name: response.profileObj.givenName,
 				status: "Active",
 			})
 			.then(() => {})

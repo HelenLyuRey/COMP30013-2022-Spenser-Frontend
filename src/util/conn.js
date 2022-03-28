@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default axios.create({
 	// baseURL: "https://aos-infolounge-back.herokuapp.com/",
-	baseURL: "http://localhost:3000/",
+	baseURL: "http://localhost:2000/",
 	// withCredentials: false,
 	headers: {
 		"Access-Control-Allow-Origin": "*",
