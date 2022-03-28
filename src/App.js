@@ -1,8 +1,9 @@
-import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home"
 import FormLogInPage from "./pages/FormLogInPage";
 import FormSignUpPage from "./pages/FormSignUpPage";
 import AuthContext from "./context/auth-context";
+import Dashboard from "./pages/Dashboard";
+import DashboardLogout from "./pages/DashboardLogout";
 // import Confirm from "./pages/Confirm";
 import "./App.css";
 
@@ -55,6 +56,8 @@ function App() {
 				<Route exact path="/" component={Home} />
 				<Route exact path="/auth/signup" component={FormSignUpPage} />
 				<Route exact path="/auth/login" component={FormLogInPage} />
+
+				<Route exact path="/dashboard" component={DashboardLogout} />
 				{/* <Route
 					exact
 					path="/confirm/:userId/:confirmationCode"

@@ -178,7 +178,7 @@ const FormLogIn = ({ submitForm }) => {
 						<Notification
 							status={notifyLogin}
 							onClose={handleNotifyLoginClose}
-							successMessage="Welcome to your InfoLounge!"
+							successMessage="Welcome to Spenser!"
 							type="success"
 						/>
 					)}
