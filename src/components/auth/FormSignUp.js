@@ -1,0 +1,121 @@
+import React from "react";
+import useForm from "../../hook/useForm";
+import validate from "../../hook/validateInfo";
+import conn from "../../util/conn.js";
+import "./Form.css";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+// import { BrowserRouter as Link } from "react-router-dom";
+
+const FormSignUp = ({ submitForm }) => {
+	let history = useHistory();
+
+	const { handleChange, values, handleSubmit, errors } = useForm(
+		submitForm,
+		validate
+	);
+
+	async function authSubmitSignUpHandler() {
+		await conn
+			.post("/auth/signup", {
+				firstname: values.firstname,
+				lastname: values.lastname,
+				email: values.email,
+				password: values.password,
+			})
+			.then((user) => {
+				alert(
+					"Please check your email and verify your account before login!"
+				);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+		if (
+			values.firstname &&
+			values.lastname &&
+			values.email &&
+			values.password
+		) {
+			history.push("/auth/login");
+		}
+	}
+
+	return (
+		<div className="form-content">
+			<form className="form-signup" onSubmit={handleSubmit}>
+				<div className="form-box">
+					<h4>Create a new account</h4>
+					<div className="form-inputs">
+						<input
+							type="text"
+							name="firstname"
+							className="form-input"
+							placeholder="First name"
+							value={values.firstname}
+							onChange={handleChange}
+						/>
+						{errors.firstname && <p>{errors.firstname}</p>}
+					</div>
+
+					<div className="form-inputs">
+						<input
+							type="text"
+							name="lastname"
+							className="form-input"
+							placeholder="Last name"
+							value={values.lastname}
+							onChange={handleChange}
+						/>
+						{errors.lastname && <p>{errors.lastname}</p>}
+					</div>
+
+					<div className="form-inputs">
+						<input
+							type="text"
+							name="email"
+							className="form-input"
+							placeholder="Email"
+							value={values.email}
+							onChange={handleChange}
+						/>
+						{errors.email && <p>{errors.email}</p>}
+					</div>
+
+					<div className="form-inputs">
+						<input
+							type="password"
+							name="password"
+							className="form-input"
+							placeholder="Password"
+							value={values.password}
+							onChange={handleChange}
+						/>
+						{errors.password && <p>{errors.password}</p>}
+					</div>
+
+					<button
+						className="form-input-btn"
+						type="submit"
+						onClick={authSubmitSignUpHandler}
+					>
+						Signup
+					</button>
+					<br />
+					{/* <Link to="/success" className="form-input-btn" type="sbmit">Sign up</Link> */}
+					{/* <span className="form-input-login">
+						Already have an account? Login{" "}
+						<Link to="/auth/login">here</Link>
+					</span> */}
+					<span className="form-input-login">
+						Already have an account? Login{" "}
+						<Link to="/auth/login">here</Link>
+					</span>
+				</div>
+			</form>
+		</div>
+	);
+};
+
+export default FormSignUp;

@@ -15,7 +15,7 @@ body{
     left: 0;
     bottom: 0;
 
-    background-image: url("./pictures/galexy.jpg");
+    /* background-image: url("./pictures/galexy.jpg"); */
     background-position: center center;
     background-size: cover;
 
@@ -25,7 +25,7 @@ body{
 .title{
     position: absolute;
 
-    top: 20vh;
+    top: 15vh;
     right: 0; 
     left: 0;
 
@@ -58,7 +58,7 @@ body{
   
 .try{
     top: 40vh;
-    left: 40%;
+    left: 0;
     right: 0;
     color: white;
     position: absolute;
@@ -66,3 +66,15 @@ body{
     align-items: center;
 }
  
+.frame{
+    position:absolute; 
+    top:25vh; 
+    left: 35%;
+    right: 0;
+    width:30%; 
+    height:65%; 
+    border: none; 
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+}

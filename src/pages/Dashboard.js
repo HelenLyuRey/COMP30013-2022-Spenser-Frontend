@@ -1,16 +1,9 @@
-// Doesn't work for index.js to include Homepage.js, maybe fix it later, just keep it like this now
-
-
-import VoiceVisualizer from "./voiceVisualizer.js";
+import VoiceVisualizer from "../voiceVisualizer.js";
 import { useState } from 'react';
-import './Homepage.css'
+import './Dashboard.css'
 
-// const Test = () => {
-//     return <p>Just testing</p>
-// }
-// export default Test;
 
-const Homepage = () => {
+const Dashboard = () => {
 
     const [buttonText, setButtonText] = useState("Start Spenser"); 
     const [isStarted, setIsStarted] =  useState(false);
@@ -41,17 +34,17 @@ const Homepage = () => {
             <div class="background"></div>
 
             <div class="top-container">
-                <div class="title" >Spenser is here</div>
-                <button id="start-btn" class="simple-btn" onClick={clickStart}>{buttonText}</button>
+                <div class="title" >Welcome to Spenser</div>
+                {/* <button id="start-btn" class="simple-btn" onClick={clickStart}>{buttonText}</button> */}
             </div>
 
             <div class="visualization-container" >
-                <canvas class="try" id="output" width="250" height="200" ></canvas>
-                <div class="try">can you see?</div>
+                {/* <canvas class="try" id="output" width="250" height="200" ></canvas> */}
+                <iframe class="frame" src="http://localhost:8080/"></iframe>
             </div>
         </div>
     );
 
 }
 
-export default Homepage;
+export default Dashboard;
