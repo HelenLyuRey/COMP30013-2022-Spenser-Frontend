@@ -118,7 +118,7 @@ const FormLogIn = ({ submitForm }) => {
 		return <CommonLoading />;
 	}
 	return (
-		<div className="form-content">
+		<div className="form-background form-content">
 			<form className="form-login" onSubmit={handleSubmit}>
 				<div className="form-box">
 					<h4>Login and get started!</h4>

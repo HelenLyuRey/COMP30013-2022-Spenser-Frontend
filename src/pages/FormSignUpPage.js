@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import FormSignUp from '../components/auth/FormSignUp'
 import FormSuccess from '../components/auth/FormSuccess'
 import TopNav from '../components/common/TopNav'
-import ParticlesBg from 'particles-bg'
 // can just direct to the homepage this is ust here for demonstration
 
 // import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
@@ -24,7 +23,6 @@ const FormSignUpPage = () => {
             {!isSubmitted ? 
                 (<FormSignUp submitForm={submitForm}/>) : 
                 (<FormSuccess/>)} 
-            <ParticlesBg type="lines" bg={true} />
 
         </div>
     )

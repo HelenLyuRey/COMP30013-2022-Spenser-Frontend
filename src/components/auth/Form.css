@@ -10,15 +10,21 @@
 
 /******************************************/
 
+.form-background{
+	background-image: url("../../images/login-signup-background.jpg");
+	background-size:cover;
+}
+
 .form-content {
 	text-align: center;
 	display: block;
+	
 }
 
 .form-signup {
 	/* margin-top: 5%; */
-	margin-top: 10%;
-	width: 30vw;
+	margin-top: 8%;
+	width: 40vw;
 	height: 65vh;
 	border-radius: 25px;
 	box-shadow: 3px 3px 3px #b8b6b6;
@@ -32,8 +38,8 @@
 
 .form-login {
 	margin-top: 11%;
-	width: 30vw;
-	height: 47vh;
+	width: 40vw;
+	height: 57vh;
 	border-radius: 25px;
 	box-shadow: 3px 3px 3px #b8b6b6;
 	position: relative;
@@ -56,7 +62,7 @@
 }
 
 .form-input {
-	width: 20vw;
+	width: 25vw;
 	border-radius: 5px;
 	border: 0;
 	padding: 2.5% 2.5% !important;
@@ -66,11 +72,11 @@
 
 .form-input:hover {
 	/* cursor: pointer; */
-	border: 1px solid #2198e7;
+	border: 1px solid #803BEC;
 }
 
 .form-input[type="text"]:focus {
-	outline: #2198e7;
+	outline: #803BEC;
 }
 
 .form-inputs {
@@ -89,9 +95,9 @@
 	width: 50%;
 	border-radius: 5px;
 	color: #fff;
-	background: linear-gradient(to right, #a5d5eb, #18a0fb);
+	background: linear-gradient(to right, #ba86dd, #8d4ff0);
 	border: 0;
-	padding: 2.5% 2.5% !important;
+	padding: 3% 3% !important;
 	margin-bottom: 2vh;
 	text-align: center;
 }
@@ -100,8 +106,8 @@
 	cursor: pointer;
 	background: linear-gradient(
 		90deg,
-		rgb(86, 163, 245) 0%,
-		rgb(68, 133, 247) 100%
+		rgb(173, 86, 245) 0%,
+		rgb(190, 68, 247) 100%
 	);
 	transition: all 0.4s ease-out;
 }
@@ -113,6 +119,6 @@
 
 .form-input-login a:hover {
 	text-decoration: none;
-	color: #277dff;
+	color: #8d4ff0;
 	font-weight: 600;
 }

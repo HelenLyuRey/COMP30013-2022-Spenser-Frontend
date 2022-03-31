@@ -17,12 +17,10 @@ const FormLogInPage = () => {
         
         <div>
             {/* <div class="bg-image"></div> */}
-            <TopNav emoj="─=≡Σ((( つ•̀ω•́)つ" home="rgb(109, 109, 109)" feature="rgb(109, 109, 109)" team="rgb(109, 109, 109)" login="rgb(109, 109, 109)" signup = "rgb(109, 109, 109)"/>
+            <TopNav/>
             {!isSubmitted ? 
                 (<FormLogIn submitForm={submitForm}/>) : 
                 (<FormSuccess/>)}
-          
-            <ParticlesBg  type="polygon" bg={true} />
 
         </div>
     )
