@@ -1,7 +1,6 @@
 .topNav-1{
-  margin-top: 3%;
+  margin-top: 2%;
   width: 100%;
-
 }
 
 
@@ -12,107 +11,41 @@
 
 .logoAndName a {
   display: inline-block;
-  /* background-image: url(../../pictures/InfoLoungeLogo.png); */
-  background-size: 100px 100px;
+  background-image: url("../../images/Spenser-logo.png");
+  background-size: 200px 80px;
   background-position: left center;
   background-repeat: no-repeat;
-  text-indent: 120px;
+  text-indent: 200px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 36px;
-  color: #2097F6;
-}
-
-.homePage {
-  position: absolute;
-  display: inline-block;
-}
-
-.homePage a {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.3em;
-  line-height: 35px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.02em;
+  font-size: 40px;
   color: white;
-  text-decoration: none;
 }
 
-.homePage a:hover {
-  color: #2097F6;
-}
 
-.aboutUs {
+.topnav-button {
+  width: 130px;
+  height: 50px;
   position: absolute;
   display: inline-block;
-}
-
-.aboutUs a {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.3em;
-  line-height: 35px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.02em;
-  color: white;
-  text-decoration:none;
-}
-
-.aboutUs a:hover {
-  color: #2097F6;
-}
-
-
-.feature {
-  position: absolute;
-  display: inline-block;
-}
-
-.feature a {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.3em;
-  line-height: 35px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.02em;
-  color: white;
-  text-decoration:none;
-}
-
-.feature a:hover {
-  color: #2097F6;
-}
-
-.login {
-  width: 100px;
-  height: 30px;
-  position: absolute;
-  display: inline-block;
-  border: 2px solid #FCE9D7;
-  border-radius: 10px;
+  border: 2px solid #803BEC;
+  border-radius: 20px;
   align-items: center;
   display: flex;
 }
 
-.login:hover {
-  background-color: #D8E374;
-  border: 2px solid #2097F6;
+.topnav-button:hover {
+  background-color: #803BEC;
+  border: 2px solid #803BEC;
 }
 
-.login a {
+.topnav-button a {
   font-style: normal;
   font-weight: 600;
   font-size: 1.3em;
   line-height: 35px;
   letter-spacing: -0.02em;
-  color: #FCE9D7;
+  color: #803BEC;
   text-decoration:none;
   display: block;
   width: 100%;
@@ -120,41 +53,6 @@
   text-align: center;
 }
 
-.login a:hover {
-  color: #FFFFFF;
-}
-
-.signup {
-  width: 100px;
-  height: 30px;
-  position: absolute;
-  display: inline-block;
-  border: 2px solid #FCE9D7;
-  border-radius: 10px;
-  align-items: center;
-  display: flex;
-}
-
-.signup:hover {
-  background-color: #D8E374;
-  border: 2px solid #2097F6;
-}
-
-.signup a {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.3em;
-  line-height: 35px;
-  
-  letter-spacing: -0.02em;
-  color: #FCE9D7;
-  text-decoration:none;
-  display: block;
-  width: 100%;
-  height: auto;
-  text-align: center;
-}
-
-.signup a:hover {
+.topnav-button a:hover {
   color: #FFFFFF;
 }

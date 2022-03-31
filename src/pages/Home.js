@@ -1,29 +1,32 @@
 import React from "react";
 import "./Home.css";
+import { Grid } from '@mui/material';
 import TopNav from "../components/common/TopNav";
-
-import ParticlesBg from "particles-bg";
 
 const Home = () => {
 	return (
-		<div>
-			<ParticlesBg type="square" bg={true} />
-			{/* <div class="bg-image"></div> */}
-			{/* <MouseParticles g={3}  radius={7} color="random" cull="col,image-wrapper"/> */}
-			<TopNav
-				emoj="( ๑‾̀◡‾́)σ"
-				home="rgb(109, 109, 109)"
-				login="rgb(109, 109, 109)"
-				signup="rgb(109, 109, 109)"
-			/>
-			<div className="slogan">
-				<p className="organise">Spenser</p>
-			</div>
-			<div className="explanation">
-				<p>A personalised voice assistant expense tracker</p>
-				<p>Makes your life easier</p>
-			</div>
-		</div>
+	<div>
+
+    <TopNav/>
+
+    <div class="home-body home-left">
+        <h2>Spenser</h2>
+        <p className="home-slogan">A voice based expense tracker just for you</p>
+        <div className="home-purple-boxline"></div>
+        <div className="home-features">
+          <p>EXPENSE TRACKING</p>
+          <p>VOICE INPUT</p>
+          <p>VOICE RESPONSE </p>
+          <p>STATISTICS</p>          
+        </div>
+    </div>
+
+    <div class="home-body home-right" >
+        <div>
+        </div>
+    </div>
+
+	</div>
 	);
 };
 

@@ -1,73 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Festive&family=Lobster&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+.home-body {
+  position:absolute;
+  top:17%;
+  bottom:0;
+  width:50%;
+  background-size:cover;
+}
 
- .bg-image{
-    /* background-image: url("../pictures/sea-blur.jpg"); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    /* background-attachment: fixed; */
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  }
-  
-  .slogan {
-    position: absolute;
-    font-family: "Fasthand", cursive;
-    left: 10%;
-    right: 10%;
-    top: 30%;
-  }
-  
-  .slogan p {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 70px;
-    line-height: 82px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.02em;
-    color: #27B9F2;
-  }
-  
-  .explanation {
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 50%;
-  }
-  
-  .explanation p {
-    font-family: "Merienda", cursive;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
-    line-height: 35px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.02em;
-    color: rgb(109, 109, 109);
-  }
-  
-  .homePageImage {
-    position: absolute;
-    width: 482px;
-    height: 586px;
-    left: 55%;
-    top: 20%;
-  }
-  
-  .homePageImage img {
-    width: 100%
-  }
+.home-left {
+  left:0;
+  width: 40%;
+  background-image:url("../images/grey-background.jpg");
+}
 
-  /* .home-font {
-    font-family: "Permanent Marker", cursive;
-    font-size: 25px;
-  }
-   */
-  
-  
-  
+.home-left h2 {
+  margin-left: 20%;
+  margin-top: 20%;
+  font-size: 3rem;
+}
+
+.home-slogan {
+  margin-left: 20%;
+  font-size: 1.5rem;
+}
+
+.home-features{
+  text-align: right;
+  margin-top: 10%;
+}
+
+.home-features p{
+  font-size: 1rem;
+}
+
+.home-purple-boxline {
+    margin-left: 20%;
+    margin-top: 8%;
+    width: 80%; 
+    height: 2%;
+    background-color: #803BEC;  
+}
+
+.home-right {
+  right:0;
+  width: 60%;
+  background-image:url("../images/home-right.png");
+}
