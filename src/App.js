@@ -3,7 +3,9 @@ import FormLogInPage from "./pages/FormLogInPage";
 import FormSignUpPage from "./pages/FormSignUpPage";
 import AuthContext from "./context/auth-context";
 import Dashboard from "./pages/Dashboard";
-import DashboardLogout from "./pages/DashboardLogout";
+import Tracker from "./pages/Tracker";
+import Profile from "./pages/Profile";
+import LoginToUseMessage from "./components/common/LoginToUseMessage"
 // import Confirm from "./pages/Confirm";
 import "./App.css";
 
@@ -45,6 +47,8 @@ function App() {
 		routes = (
 			<React.Fragment>
 				<Route exact path="/dashboard" component={Dashboard} />
+				<Route exact path="/tracker" component={Tracker} />
+				<Route exact path="/profile" component={Profile} />
 
 				{/* if logged in, the user will be directed to enter the business location */}
 				{/* <Redirect to="/dashboard" /> */}
@@ -57,7 +61,9 @@ function App() {
 				<Route exact path="/auth/signup" component={FormSignUpPage} />
 				<Route exact path="/auth/login" component={FormLogInPage} />
 
-				<Route exact path="/dashboard" component={DashboardLogout} />
+				<Route exact path="/dashboard" component={LoginToUseMessage} />
+				<Route exact path="/tracker" component={LoginToUseMessage} />
+				<Route exact path="/profile" component={LoginToUseMessage} />
 				{/* <Route
 					exact
 					path="/confirm/:userId/:confirmationCode"

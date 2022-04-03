@@ -10,7 +10,7 @@ const Dashboard = () => {
             {/* <div class="background"></div> */}
             <LoggedInNav/>
             <div class="top-container">
-                <div class="title" >Welcome to Spenser</div>
+                <div class="title" >This is the dashbord page</div>
                 {/* <button id="start-btn" class="simple-btn" onClick={clickStart}>{buttonText}</button> */}
             </div>
 

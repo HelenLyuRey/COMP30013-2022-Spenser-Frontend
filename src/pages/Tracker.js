@@ -1,7 +1,7 @@
 import LoggedInNav from "../components/common/LoggedInNav"
 
 
-const Profile = () => {        
+const Tracker = () => {        
    
     return (
 		<div>
@@ -14,10 +14,10 @@ const Profile = () => {
 					color: "black",
 					fontSize: "150%",
 					textAlign: "center"
-			}}>This is the Profile page, will add on this later</div>
+			}}>This is the Tracker page, will add on this later</div>
 		</div>
     );
 
 }
 
-export default Profile;
+export default Tracker;
