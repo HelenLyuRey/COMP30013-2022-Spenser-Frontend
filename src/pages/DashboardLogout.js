@@ -1,4 +1,3 @@
-import VoiceVisualizer from "../voiceVisualizer.js";
 import { useState } from 'react';
 import LoggedInNav from "../components/common/LoggedInNav"
 import './Dashboard.css'
