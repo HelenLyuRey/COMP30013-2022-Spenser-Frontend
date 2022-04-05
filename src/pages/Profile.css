@@ -1,0 +1,61 @@
+.background{
+    position: absolute;
+    background-color: #EBEBEB;
+    width: 100%;
+    height: 100%;
+}
+
+
+.form-profile{
+	margin-top: 11%;
+	width: 55vw;
+	height: 75vh;
+	border-radius: 25px;
+	box-shadow: 3px 3px 3px #b8b6b6;
+	position: relative;
+	background: white;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	transform: translate(-50%, -50%);
+}
+
+
+.profile-container {
+	position: absolute;
+    width: 50%;
+	left: 65%;
+	top: 47%;
+	transform: translate(-50%, -50%);
+}
+
+.avatar{
+    position: absolute;
+    left: 13%;
+	top: 32%;
+}
+
+.field{
+    padding: 5%;
+}
+
+.field_label{
+    text-align: left;
+}
+
+.input{
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+}
+
+.selector{
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+
