@@ -1,80 +1,16 @@
-body{
-    overflow: hidden;
-    font-family: "Roboto", sans-serif;
-    font-family: sans-serif;
-	margin: 0;
-	height: 100%;
-	width: 100%;
-}
-
-.background {
+.background{
     position: absolute;
-
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-
-    /* background-image: url("./pictures/galexy.jpg"); */
-    background-position: center center;
-    background-size: cover;
-
-    filter: blur(3px);
-}
-
-.title{
-    position: absolute;
-
-    top: 15vh;
-    right: 0; 
-    left: 0;
-
-    color: black;
-    font-size: 150%;
-    text-align: center;
-}
-
-.simple-btn{
-    position: absolute;
-    top: 30vh;
-    text-align: center;
-}
-
-.top-container{
-    text-align: center;
+    background-color: #EBEBEB;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 100%;
 }
 
-.visualizer-container {
-    /* width: 100%; */
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
-}
-  
-.try{
-    top: 40vh;
-    left: 0;
-    right: 0;
-    color: white;
+.dashboardMain {
     position: absolute;
+    left: 10%;
+    right: 5%;
+    top: 5%;
+    bottom: 0%;
+    overflow-x: scroll;
     text-align: center;
-    align-items: center;
-}
- 
-.frame{
-    position:absolute; 
-    top:25vh; 
-    left: 35%;
-    right: 0;
-    width:30%; 
-    height:65%; 
-    border: none; 
-    overflow: hidden;
-    text-align: center;
-    align-items: center;
 }
