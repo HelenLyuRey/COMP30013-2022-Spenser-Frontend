@@ -395,24 +395,24 @@ body
 </style>
 
 <script>
-import WelcomeView from '@/views/WelcomeView.vue'
+import WelcomeView from './views/WelcomeView.vue'
 
-import ErrorMessage from '@/components/ErrorMessage.vue'
-import TopHead from '@/components/TopHead.vue'
-import TopHeadAction from '@/components/TopHeadAction.vue'
-import ChatField from '@/components/ChatField.vue'
+import ErrorMessage from './components/ErrorMessage.vue'
+import TopHead from './components/TopHead.vue'
+import TopHeadAction from './components/TopHeadAction.vue'
+import ChatField from './components/ChatField.vue'
 
-import RichComponent from '@/components/RichComponent.vue'
-import RichBubble from '@/components/RichBubble.vue'
-import RichCard from '@/components/RichCard.vue'
-import RichCardButton from '@/components/RichCardButton.vue'
-import RichCarousel from '@/components/RichCarousel.vue'
-import RichList from '@/components/RichList.vue'
-import RichListItem from '@/components/RichListItem.vue'
-import RichPicture from '@/components/RichPicture.vue'
-import RichMedia from '@/components/RichMedia.vue'
-import RichTableCard from '@/components/RichTableCard.vue'
-import RichSuggesion from '@/components/RichSuggestion.vue'
+import RichComponent from './components/RichComponent.vue'
+import RichBubble from './components/RichBubble.vue'
+import RichCard from './components/RichCard.vue'
+import RichCardButton from './components/RichCardButton.vue'
+import RichCarousel from './components/RichCarousel.vue'
+import RichList from './components/RichList.vue'
+import RichListItem from './components/RichListItem.vue'
+import RichPicture from './components/RichPicture.vue'
+import RichMedia from './components/RichMedia.vue'
+import RichTableCard from './components/RichTableCard.vue'
+import RichSuggesion from './components/RichSuggestion.vue'
 
 import * as uuidv1 from 'uuid/v1'
 

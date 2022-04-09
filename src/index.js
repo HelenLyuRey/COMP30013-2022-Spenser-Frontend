@@ -2,16 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-import MsgComponent from './components/tracker/MsgComponent.vue'
-import {applyVueInReact} from 'veaury'
+// import App from './components/tracker/App.vue'
 
-const Basic = applyVueInReact(MsgComponent)
+
+
+
 
 ReactDOM.render(
 	<React.StrictMode>
-		{/* <App /> */}
+		<App />
 		{/* <Main/> */}
-		<Basic message={'Hello from Vue'}/>
+		{/* <div>
+			Can you see?
+		</div>
+		 */}
 	</React.StrictMode>,
 	document.getElementById("root")
 );

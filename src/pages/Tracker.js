@@ -1,12 +1,19 @@
 import LoggedInNav from "../components/common/LoggedInNav"
+import App from '../components/tracker/App.vue'
+
+import {applyVueInReact} from 'veaury'
 
 
-const Tracker = () => {        
+const Tracker = () => {     
+
+	const Tracker = applyVueInReact(App)
    
     return (
 		<div>
 			<LoggedInNav/>
-			<div style={{
+			<Tracker/>
+			{/* <Basic message={'Hello from Vue'}/> */}
+			{/* <div style={{
 					position: "absolute",
 					top: "30vh",
 					right: "0",
@@ -14,7 +21,7 @@ const Tracker = () => {
 					color: "black",
 					fontSize: "150%",
 					textAlign: "center"
-			}}>This is the Tracker page, will add on this later</div>
+			}}>This is the Tracker page, will add on this later</div> */}
 		</div>
     );
 

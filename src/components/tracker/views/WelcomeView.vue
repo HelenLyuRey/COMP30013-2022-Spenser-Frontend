@@ -22,13 +22,14 @@
 </template>
 
 <style lang="sass" scoped>
-@import '@/style/mixins'
+import './style/mixins'
 
 .welcome-view
   text-align: center
   display: flex
   flex-direction: column
   align-items: center
+
 
 .agent-icon
   width: 120px
@@ -64,7 +65,7 @@
     padding-right: 24px
 
   i
-    pointer-events: none
+    pointer-events: none{}
 </style>
 
 <script>
