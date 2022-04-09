@@ -102,7 +102,7 @@ const FormLogIn = ({ submitForm }) => {
 				console.log(res.data.data);
 				setTimeout(async () => {
 					auth.onLogin(res.data.data._id);
-					history.push("/dashboard");
+					history.push("/tracker");
 				}, 2000);
 			})
 			.catch((err) => {

@@ -34,7 +34,6 @@
 		"nodemailer": "^6.7.0",
 		"puppeteer": "^11.0.0",
 		"react": "^17.0.2",
-		"react-awesome-calendar": "^1.0.14",
 		"react-dom": "^17.0.2",
 		"react-easy-edit": "^1.15.0",
 		"react-google-button": "^0.7.2",
@@ -91,7 +90,6 @@
 		"react-refresh": "^0.11.0",
 		"resolve": "^1.20.0",
 		"resolve-url-loader": "^4.0.0",
-		"sass-loader": "^12.3.0",
 		"semver": "^7.3.5",
 		"source-map-loader": "^3.0.0",
 		"style-loader": "^3.3.1",
@@ -189,6 +187,7 @@
 		"@vue/cli-plugin-eslint": "^4.5.13",
 		"@vue/cli-plugin-pwa": "^4.5.13",
 		"@vue/cli-service": "^4.5.13",
+		"@vue/compiler-sfc": "^3.2.31",
 		"@vue/eslint-config-standard": "^6.1.0",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^7.32.0",
@@ -197,9 +196,8 @@
 		"eslint-plugin-promise": "^5.1.0",
 		"eslint-plugin-standard": "^5.0.0",
 		"eslint-plugin-vue": "^7.15.1",
+		"vue-loader": "^17.0.0",
 		"sass": "^1.37.5",
-		"sass-loader": "^10.1.1",
-		"@vue/compiler-sfc": "^3.2.31",
-		"vue-loader": "^17.0.0"
+		"sass-loader": "^10.1.1"
 	}
 }
