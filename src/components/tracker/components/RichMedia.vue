@@ -11,42 +11,47 @@
   </div>
 </template>
 
-<style lang="sass" scoped>
-.rich-media
-  padding: 16px
-  border-radius: 12px
-  background-color: var(--background-component)
-  box-shadow: var(--shadow)
+<style lang="scss" scoped>
+.rich-media{
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--background-component);
+  box-shadow: var(--shadow);
+}
+.rich-media-title{
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--text-title);
+}
+.rich-media-subtitle{
+  line-height: 24px;
+  color: var(--text-subtitle);
+}
 
-.rich-media-title
-  font-size: 20px
-  line-height: 30px
-  color: var(--text-title)
+.rich-media-head{
+  display: flex;
+  margin-top: 2.5px;
+  align-items: flex-start;
+}
 
-.rich-media-subtitle
-  line-height: 24px
-  color: var(--text-subtitle)
+.rich-media-info{
+  flex: 1;
+}
 
-.rich-media-head
-  display: flex
-  margin-top: 2.5px
-  align-items: flex-start
+.rich-media-image{
+  border-radius: 12px;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  margin-left: 16px;
+  float: right;
+  background-color: var(--background-image);
+}
 
-.rich-media-info
-  flex: 1
-
-.rich-media-image
-  border-radius: 12px
-  height: 50px
-  width: 50px
-  object-fit: cover
-  margin-left: 16px
-  float: right
-  background-color: var(--background-image)
-
-.rich-media-controls
-  padding-top: 16px
-  width: 100%
+.rich-media-controls{
+  padding-top: 16px;
+  width: 100%;
+}
 </style>
 
 <script>

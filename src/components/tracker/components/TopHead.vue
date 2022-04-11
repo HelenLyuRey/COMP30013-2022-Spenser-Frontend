@@ -12,47 +12,47 @@
   </header>
 </template>
 
-<style lang="sass" scoped>
-@import '@/style/mixins'
+<style lang="scss" scoped>
+@import '../style/mixins.scss';
 
-.top-head
-  position: fixed
-  width: 100%
-  display: flex
-  z-index: 2
-  top: 0
-  height: 60px
+.top-head {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  z-index: 2;
+  top: 0;
+  height: 60px; }
+  @media screen and (max-width: 1000px) {
+    .top-head {
+      background-color: var(--background); } }
 
-  @media screen and (max-width: 1000px)
-    background-color: var(--background)
+.top-head-container {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  flex: 1 0 0; }
 
-.top-head-container
-  padding: 12px
-  display: flex
-  align-items: center
-  flex: 1 0 0
+.top-head-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover; }
 
-.top-head-icon
-  width: 30px
-  height: 30px
-  object-fit: cover
+.top-head-info {
+  display: inline-block;
+  margin-left: 12px; }
 
-.top-head-info
-  display: inline-block
-  margin-left: 12px
+.top-head-title {
+  font-size: 18px;
+  color: var(--text-title);
+  line-height: 15px; }
 
-.top-head-title
-  font-size: 18px
-  color: var(--text-title)
-  line-height: 15px
+.top-head-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px; }
+  .top-head-subtitle a[href] {
+    color: var(--text-primary);
+    text-decoration: none; }
 
-.top-head-subtitle
-  color: var(--text-secondary)
-  font-size: 14px
-
-  a[href]
-    color: var(--text-primary)
-    text-decoration: none
 </style>
 
 <script>

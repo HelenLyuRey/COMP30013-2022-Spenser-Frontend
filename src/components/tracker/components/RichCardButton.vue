@@ -14,28 +14,30 @@
   </button>
 </template>
 
-<style lang="sass" scoped>
-@import '@/style/mixins'
+<style lang="ssss" scoped>
+@import '../style/mixins.scss';
 
-.rich-card-button
-  @include reset
-  display: flex
-  text-decoration: none
-  line-height: 24px
-  color: var(--text-primary)
-  border: var(--border)
-  border-radius: 40px
-  padding: 8px 12px
-  cursor: pointer
-  justify-content: space-between
-  flex: 1
-
-  &[href]
-    color: var(--accent)
-
-.rich-card-button-title
-  flex: 1
-  text-align: center
+.rich-card-button{
+  @include reset{
+    display: flex;
+    text-decoration: none;
+    line-height: 24px;
+    color: var(--text-primary);
+    border: var(--border);
+    border-radius: 40px;
+    padding: 8px 12px;
+    cursor: pointer;
+    justify-content: space-between;
+    flex: 1;
+    &[href]{
+      color: var(--accent);
+    }
+  }
+}
+.rich-card-button-title{
+  flex: 1;
+  text-align: center;
+}
 </style>
 
 <script>

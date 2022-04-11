@@ -5,19 +5,20 @@
   </div>
 </template>
 
-<style lang="sass" scoped>
-.error-message
-  text-align: center
-
-.error-message-icon
-  font-size: 48px
-  color: var(--text-element)
-  margin-bottom: 30px
-
-.error-message-description
-  font-size: 16px
-  color: var(--text-element)
-  word-wrap: break-word
+<style lang="scss" scoped>
+.error-message{
+  text-align: center;
+}
+.error-message-icon{
+  font-size: 48px;
+  color: var(--text-element);
+  margin-bottom: 30px;
+}
+.error-message-description{
+  font-size: 16px;
+  color: var(--text-element);
+  word-wrap: break-word;
+}
 </style>
 
 <script>

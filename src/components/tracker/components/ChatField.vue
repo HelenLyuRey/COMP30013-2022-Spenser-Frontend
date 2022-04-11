@@ -51,76 +51,87 @@
   </div>
 </template>
 
-<style lang="sass" scoped>
-@import '@/style/mixins'
+<style lang="scss" scoped>
+@import '../style/mixins.scss';
 
-.chat-field
-  position: fixed
-  bottom: 0
-  left: 0
-  width: 100%
-  background-color: var(--background)
-  z-index: 2
+.chat-field{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background);
+  z-index: 2;
+}
 
-.chat-field-container
-  max-width: var(--container-width)
-  margin: auto auto
-  padding: 12px
+.chat-field-container{
+  max-width: var(--container-width);
+  margin: auto auto;
+  padding: 12px;
+}
 
-.chat-field-flexible
-  display: flex
-  border-radius: 40px
-  border: var(--border)
+.chat-field-flexible{
+  display: flex;
+  border-radius: 40px;
+  border: var(--border);
+}
 
-.chat-field-suggestions
-  overflow-x: scroll
-  overflow-y: hidden
-  white-space: nowrap
-  -webkit-overflow-scrolling: touch
+.chat-field-suggestions{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+.chat-field-input{
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  padding: 10px 0 10px 12px;
+  color: var(--text-primary);
+  border-radius: 40px 0 0 40px;
+  background-color: transparent;
 
-  &::-webkit-scrollbar
-    display: none
+  &:disabled{
+    cursor: not-allowed;
+    }
+}
 
-.chat-field-input
-  font-size: 16px
-  width: 100%
-  box-sizing: border-box
-  border: none
-  padding: 10px 0 10px 12px
-  color: var(--text-primary)
-  border-radius: 40px 0 0 40px
-  background-color: transparent
+.chat-field-action{
+  @include reset{
+    padding: 10px 12px;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 24px;
+    display: flex;
 
-  &:disabled
-    cursor: not-allowed
+    &:disabled{
+      cursor: not-allowed;
+    }
 
-.chat-field-action
-  @include reset
-  padding: 10px 12px
-  cursor: pointer
-  color: var(--accent)
-  font-size: 24px
-  display: flex
+    &.mic_active{
+      color: #F44336;
+    }
+  }
+}
+.chat-field-suggestions-animation-enter-active, .chat-field-suggestions-animation-leave-active{
+  transition: all .15s var(--animation-timing)}
 
-  &:disabled
-    cursor: not-allowed
+.chat-field-suggestions-animation-enter, .chat-field-suggestions-animation-leave-to{
+  transform: translateY(10px);
+  opacity: 0;
+}
 
-  &.mic_active
-    color: #F44336
+.chat-field-button-animation-enter-active, .chat-field-button-animation-leave-active{
+  transition: all .15s var(--animation-timing);
+}
 
-.chat-field-suggestions-animation-enter-active, .chat-field-suggestions-animation-leave-active
-  transition: all .15s var(--animation-timing)
-
-.chat-field-suggestions-animation-enter, .chat-field-suggestions-animation-leave-to
-  transform: translateY(10px)
-  opacity: 0
-
-.chat-field-button-animation-enter-active, .chat-field-button-animation-leave-active
-  transition: all .15s var(--animation-timing)
-
-.chat-field-button-animation-enter, .chat-field-button-animation-leave-to
-  transform: scale(0)
-  opacity: 0
+.chat-field-button-animation-enter, .chat-field-button-animation-leave-to{
+  transform: scale(0);
+  opacity: 0;
+}
 </style>
 
 <script>

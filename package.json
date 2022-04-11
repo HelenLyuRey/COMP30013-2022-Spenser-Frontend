@@ -196,8 +196,9 @@
 		"eslint-plugin-promise": "^5.1.0",
 		"eslint-plugin-standard": "^5.0.0",
 		"eslint-plugin-vue": "^7.15.1",
-		"vue-loader": "^17.0.0",
+		"node-sass": "^7.0.1",
 		"sass": "^1.37.5",
-		"sass-loader": "^10.1.1"
+		"sass-loader": "^10.2.1",
+		"vue-loader": "^17.0.0"
 	}
 }

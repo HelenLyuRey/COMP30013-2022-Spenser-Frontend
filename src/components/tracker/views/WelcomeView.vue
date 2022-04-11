@@ -21,51 +21,57 @@
   </div>
 </template>
 
-<style lang="sass" scoped>
-import './style/mixins'
+<style lang="scss" scoped>
+@import '../style/mixins.scss';
 
-.welcome-view
-  text-align: center
-  display: flex
-  flex-direction: column
-  align-items: center
+.welcome-view{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.agent-icon{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
 
-.agent-icon
-  width: 120px
-  height: 120px
-  object-fit: cover
+.agent-title{
+  font-size: 24px;
+  margin-top: 30px;
+  color: var(--text-title);
+  line-height: 20px;
+}
 
-.agent-title
-  font-size: 24px
-  margin-top: 30px
-  color: var(--text-title)
-  line-height: 20px
+.agent-description{
+  font-size: 16px;
+  color: var(--text-secondary);
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
 
-.agent-description
-  font-size: 16px
-  color: var(--text-secondary)
-  padding-top: 10px
-  padding-bottom: 20px
+.language-picker{
+  display: inline-flex;
+  border: var(--border);
+  border-radius: 40px;
+  cursor: pointer;
+  margin-right: 2px;
+  color: var(--text-primary);
+  align-items: center;
+}
 
-.language-picker
-  display: inline-flex
-  border: var(--border)
-  border-radius: 40px
-  cursor: pointer
-  margin-right: 2px
-  color: var(--text-primary)
-  align-items: center
-
-  select
-    @include reset
-    width: 100%
-    padding: 8px 12px
-    margin-right: -24px
-    padding-right: 24px
-
-  i
-    pointer-events: none{}
+  select{
+    @include reset{
+      width: 100%;
+      padding: 8px 12px;
+      margin-right: -24px;
+      padding-right: 24px;
+    }
+  }
+  i{
+    pointer-events: none;
+  }
 </style>
 
 <script>

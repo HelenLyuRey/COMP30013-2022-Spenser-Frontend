@@ -9,23 +9,25 @@
   </button>
 </template>
 
-<style lang="sass" scoped>
-@import '@/style/mixins'
+<style lang="scss" scoped>
+@import '../style/mixins.scss';
 
-.top-head-action
-  @include reset
-  display: flex
-  margin: 8px 0
-  padding: 10px 12px
-  border-radius: 40px 0 0 40px
-  border: var(--border)
-  border-right: none
-  cursor: pointer
-  color: var(--text-primary)
-  transition: padding .25s var(--animation-timing)
-
-  &:hover
-    padding-right: 20px
+.top-head-action{
+  @include reset{
+    display: flex;
+    margin: 8px 0;
+    padding: 10px 12px;
+    border-radius: 40px 0 0 40px;
+    border: var(--border);
+    border-right: none;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: padding .25s var(--animation-timing);
+  }
+  &:hover{
+    padding-right: 20px;
+  }
+}
 </style>
 
 <script>

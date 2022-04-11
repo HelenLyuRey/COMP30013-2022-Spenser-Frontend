@@ -378,20 +378,21 @@
   </main>
 </template>
 
-<style lang="sass">
-@import '@/style/theme.sass'
+<style lang="scss">
+@import './style/theme.scss';
 
-body
-  margin: 0
-  padding: 0
-  font-family: var(--font)
-  font-display: swap
-  background-color: var(--background)
-
-.chat
-  max-width: var(--container-width)
-  margin: auto auto
-  padding: 70px 12px 112px 12px
+body{
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  font-display: swap;
+  background-color: var(--background);
+}
+.chat{
+  max-width: var(--container-width);
+  margin: auto auto;
+  padding: 70px 12px 112px 12px;
+}
 </style>
 
 <script>

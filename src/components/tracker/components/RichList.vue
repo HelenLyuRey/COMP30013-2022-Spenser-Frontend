@@ -8,26 +8,30 @@
   </div>
 </template>
 
-<style lang="sass" scoped>
-.rich-list
-  padding: 16px
-  border-radius: 12px
-  background-color: var(--background-component)
-  box-shadow: var(--shadow)
+<style lang="scss" scoped>
+.rich-list{
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--background-component);
+  box-shadow: var(--shadow);
+}
 
-.rich-list-title
-  font-size: 20px
-  line-height: 30px
-  color: var(--text-title)
+.rich-list-title{
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--text-title);
+}
 
-.rich-list-subtitle
-  line-height: 24px
-  color: var(--text-subtitle)
+.rich-list-subtitle{
+  line-height: 24px;
+  color: var(--text-subtitle);
+}
 
-.rich-list-content
-  rich-list-style-type: none
-  margin: 0
-  padding: 0
+.rich-list-content{
+  rich-list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 </style>
 
 <script>
