@@ -13,7 +13,7 @@
 @import '../style/mixins.scss';
 
 .top-head-action{
-  @include reset{
+  // @include reset{
     display: flex;
     margin: 8px 0;
     padding: 10px 12px;
@@ -23,7 +23,7 @@
     cursor: pointer;
     color: var(--text-primary);
     transition: padding .25s var(--animation-timing);
-  }
+  // }
   &:hover{
     padding-right: 20px;
   }

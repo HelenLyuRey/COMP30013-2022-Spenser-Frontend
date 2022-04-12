@@ -61,17 +61,17 @@
   align-items: center;
 }
 
-  select{
-    @include reset{
-      width: 100%;
-      padding: 8px 12px;
-      margin-right: -24px;
-      padding-right: 24px;
-    }
-  }
-  i{
-    pointer-events: none;
-  }
+select{
+  // @include reset{
+    width: 100%;
+    padding: 8px 12px;
+    margin-right: -24px;
+    padding-right: 24px;
+  // }
+}
+i{
+  pointer-events: none;
+}
 </style>
 
 <script>

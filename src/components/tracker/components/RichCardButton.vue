@@ -14,11 +14,11 @@
   </button>
 </template>
 
-<style lang="ssss" scoped>
+<style lang="scss" scoped>
 @import '../style/mixins.scss';
 
 .rich-card-button{
-  @include reset{
+  /* @include reset{ */
     display: flex;
     text-decoration: none;
     line-height: 24px;
@@ -32,7 +32,7 @@
     &[href]{
       color: var(--accent);
     }
-  }
+  /* } */
 }
 .rich-card-button-title{
   flex: 1;

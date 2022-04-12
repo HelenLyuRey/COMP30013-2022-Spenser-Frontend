@@ -14,7 +14,7 @@
 @import '../style/mixins.scss';
 
 .rich-suggestion{
-  @include reset{
+  // @include reset{
   display: inline-block;
   padding: 8px 12px;
   border-radius: 40px;
@@ -23,7 +23,7 @@
   cursor: pointer;
   margin-right: 6px;
   margin-bottom: 6px;
-  }
+  // }
 
   &[href]{
     color: var(--accent);

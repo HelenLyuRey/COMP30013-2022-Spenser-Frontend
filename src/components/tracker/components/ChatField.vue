@@ -100,7 +100,7 @@
 }
 
 .chat-field-action{
-  @include reset{
+  // @include reset{
     padding: 10px 12px;
     cursor: pointer;
     color: var(--accent);
@@ -114,7 +114,7 @@
     &.mic_active{
       color: #F44336;
     }
-  }
+  // }
 }
 .chat-field-suggestions-animation-enter-active, .chat-field-suggestions-animation-leave-active{
   transition: all .15s var(--animation-timing)}
