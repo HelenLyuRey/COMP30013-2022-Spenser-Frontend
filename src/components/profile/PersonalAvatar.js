@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function TopProfileAvatar() {
+function ProfileAvatar() {
 	const classes = useStyles();
 	// const auth = useContext(AuthContext);
 
@@ -75,4 +75,4 @@ function TopProfileAvatar() {
 	);
 }
 
-export default TopProfileAvatar;
+export default ProfileAvatar;

@@ -40,7 +40,7 @@
 }
 
 .field{
-    padding: 5%;
+    padding: 3%;
 }
 
 .field_label{
@@ -54,8 +54,28 @@
 }
 
 .selector{
-    width: 100%;
+    width: 102%;
     height: 40px;
     cursor: pointer;
 }
 
+.submit-btn{
+	margin-top: 2%;
+	width: 102%;
+	height: 35px;
+	border: 0;
+	color: #fff;
+	background: #8856e6;
+}
+
+.submit-btn:hover{
+	cursor: pointer;
+	background: linear-gradient(
+		90deg,
+		rgb(173, 86, 245) 0%,
+		rgb(190, 68, 247) 100%
+	);
+	transition: all 0.4s ease-out;
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
