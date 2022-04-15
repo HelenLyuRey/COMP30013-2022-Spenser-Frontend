@@ -158,7 +158,7 @@ const FormLogIn = ({ submitForm }) => {
 					>
 						Login
 					</button>
-					<div>
+					{/* <div>
 						<GoogleLogin
 							clientId="425837192336-ol7elme3vmnlnivj7lauikr6sr2mhmjr.apps.googleusercontent.com"
 							// buttonText="Login with Google"
@@ -173,7 +173,7 @@ const FormLogIn = ({ submitForm }) => {
 								</button>
 							)}
 						/>
-					</div>
+					</div> */}
 					{notifyLogin && (
 						<Notification
 							status={notifyLogin}

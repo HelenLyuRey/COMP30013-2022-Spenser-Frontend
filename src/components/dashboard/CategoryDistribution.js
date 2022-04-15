@@ -1,10 +1,20 @@
 import ReactECharts from "echarts-for-react";
 import React from "react";
-import { useState, useEffect, useContext } from "react";
-import conn from "../../util/conn";
-import AuthContext from "../../context/auth-context";
 
-const EntityDistribution = () => {
+const CategoryDistribution = (props) => {
+	const category = props.category; // all category object
+	// console.log(category)
+	let data = []
+
+	if(category != undefined && category != null){
+		Object.keys(category).map(function(key) {
+			data.push({
+			  value: category[key],
+			  name: key
+			  });
+		});
+	}
+	
 	let option = {
 		title: {
 		  text: 'Spending Distribution',
@@ -55,13 +65,7 @@ const EntityDistribution = () => {
 				  }
 				}
 			  },
-			data: [
-				{ value: 1000, name: "Food" },
-				{ value: 300, name: "Drink" },
-				{ value: 150, name: "Transport" },
-				{ value: 300, name: "Fresh Produce"},
-				{ value: 500, name: "Grocery" },
-			],
+			data: data,
 			emphasis: {
 			  itemStyle: {
 				shadowBlur: 10,
@@ -80,4 +84,4 @@ const EntityDistribution = () => {
 	);
 };
 
-export default EntityDistribution;
+export default CategoryDistribution;

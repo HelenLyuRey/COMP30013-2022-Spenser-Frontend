@@ -4,8 +4,18 @@ import { useState, useEffect, useContext } from "react";
 import conn from "../../util/conn";
 import AuthContext from "../../context/auth-context";
 
-const MonthlyBalance = () => {
+const MonthlyBalance = (props) => {
 
+  const monthly_balance = props.monthly_balance;
+
+  let monthly_balance_nums = [];
+
+  if(monthly_balance != undefined && monthly_balance != null){
+    Object.keys(monthly_balance).map(function(key) {
+      monthly_balance_nums.push(monthly_balance[key]);
+    })
+  }
+  
     let option = {
         title: {
           text: 'Monthly Balance'
@@ -47,7 +57,7 @@ const MonthlyBalance = () => {
               show: true,
               formatter: '{b}'
             },
-            data: [500, 1000, 700, 1970, 0, -450, 3000, -3000, 1000, 500, 790, -400]
+            data: monthly_balance_nums.reverse()
           }
         ]
       };
