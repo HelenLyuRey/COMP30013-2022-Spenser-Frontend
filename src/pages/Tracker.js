@@ -1,5 +1,5 @@
 import LoggedInNav from "../components/common/LoggedInNav"
-import App from '../components/tracker/App.vue'
+// import App from '../components/tracker/App.vue'
 
 import MsgComponent from '../components/tracker/MsgComponent.vue'
 

@@ -1,5 +1,11 @@
 'use strict';
 
+// const Vue = require('vue')
+// const App = require('../src/App.vue')
+// const config = require('../src/components/tracker/config')
+// const translations = require('../src/components/tracker/translations/translations.json')
+// const registerServiceWorker = require('../src/components/tracker/utils/registerServiceWorker')
+
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
@@ -152,3 +158,4 @@ checkBrowsers(paths.appPath, isInteractive)
     }
     process.exit(1);
   });
+

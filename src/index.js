@@ -1,19 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import SpenserApp from "./SpenserApp";
 
-// import App from './components/tracker/App.vue'
-// import MsgComponent from '../components/tracker/MsgComponent.vue'
+import App from './App.vue'
+import MsgComponent from './components/tracker/MsgComponent.vue'
 
+import {applyVueInReact} from 'veaury'
+const Tracker = applyVueInReact(MsgComponent)
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
-		{/* <Main/> */}
-		{/* <div>
-			Can you see?
-		</div>
-		 */}
+		<SpenserApp />
+
+		{/* <Tracker message="Hi"/> */}
+		{/* <Tracker/> */}
+
 	</React.StrictMode>,
 	document.getElementById("root")
 );

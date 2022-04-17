@@ -379,7 +379,7 @@
 </template>
 
 <style lang="scss">
-@import './style/theme.scss';
+@import './components/tracker/style/theme.scss';
 
 body{
   margin: 0;
@@ -396,24 +396,24 @@ body{
 </style>
 
 <script>
-import WelcomeView from './views/WelcomeView.vue'
+import WelcomeView from './components/tracker/views/WelcomeView.vue'
 
-import ErrorMessage from './components/ErrorMessage.vue'
-import TopHead from './components/TopHead.vue'
-import TopHeadAction from './components/TopHeadAction.vue'
-import ChatField from './components/ChatField.vue'
+import ErrorMessage from './components/tracker/components/ErrorMessage.vue'
+import TopHead from './components/tracker/components/TopHead.vue'
+import TopHeadAction from './components/tracker/components/TopHeadAction.vue'
+import ChatField from './components/tracker/components/ChatField.vue'
 
-import RichComponent from './components/RichComponent.vue'
-import RichBubble from './components/RichBubble.vue'
-import RichCard from './components/RichCard.vue'
-import RichCardButton from './components/RichCardButton.vue'
-import RichCarousel from './components/RichCarousel.vue'
-import RichList from './components/RichList.vue'
-import RichListItem from './components/RichListItem.vue'
-import RichPicture from './components/RichPicture.vue'
-import RichMedia from './components/RichMedia.vue'
-import RichTableCard from './components/RichTableCard.vue'
-import RichSuggesion from './components/RichSuggestion.vue'
+import RichComponent from './components/tracker/components/RichComponent.vue'
+import RichBubble from './components/tracker/components/RichBubble.vue'
+import RichCard from './components/tracker/components/RichCard.vue'
+import RichCardButton from './components/tracker/components/RichCardButton.vue'
+import RichCarousel from './components/tracker/components/RichCarousel.vue'
+import RichList from './components/tracker/components/RichList.vue'
+import RichListItem from './components/tracker/components/RichListItem.vue'
+import RichPicture from './components/tracker/components/RichPicture.vue'
+import RichMedia from './components/tracker/components/RichMedia.vue'
+import RichTableCard from './components/tracker/components/RichTableCard.vue'
+import RichSuggesion from './components/tracker/components/RichSuggestion.vue'
 
 import * as uuidv1 from 'uuid/v1'
 
@@ -440,6 +440,7 @@ export default {
     RichSuggesion
   },
   data () {
+    console.log(this)
     return {
       agent: null,
       messages: [],
@@ -483,7 +484,6 @@ export default {
 
         return { textSuggestions, linkSuggestions }
       }
-
       return {
         textSuggestions: this.config.start_suggestions // <- if no messages are present, return start_suggestions, from config.js to help user figure out what he can do with your application
       }

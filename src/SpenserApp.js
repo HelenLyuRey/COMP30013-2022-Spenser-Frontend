@@ -7,16 +7,20 @@ import Tracker from "./pages/Tracker";
 import Profile from "./pages/Profile";
 import LoginToUseMessage from "./components/common/LoginToUseMessage"
 // import Confirm from "./pages/Confirm";
-import "./App.css";
+import "./SpenserApp.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useCallback, useState, useEffect } from "react";
+
+// import App from './App.vue'
+// import {applyVueInReact} from 'veaury'
+// const TrackerTest = applyVueInReact(App)
 
 
 
 /***********************************/
 
-function App() {
+function SpenserApp() {
 	const [userID, setUserID] = useState("");
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -64,6 +68,8 @@ function App() {
 				<Route exact path="/dashboard" component={LoginToUseMessage} />
 				<Route exact path="/tracker" component={LoginToUseMessage} />
 				<Route exact path="/profile" component={LoginToUseMessage} />
+
+				{/* <Route exact path="/test" component={TrackerTest} /> */}
 				{/* <Route
 					exact
 					path="/confirm/:userId/:confirmationCode"
@@ -94,4 +100,4 @@ function App() {
 	);
 }
 
-export default App;
+export default SpenserApp;
