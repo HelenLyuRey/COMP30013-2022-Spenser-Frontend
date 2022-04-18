@@ -1,5 +1,6 @@
 <template>
   <main id="app">
+    <!-- <SideNav/> -->
     <!-- TopHead is the header with the information about the app -->
     <TopHead v-if="agent && messages.length > 0" :agent="agent">
       <!-- Audio toggle (on the top right corner), used to toggle the audio output, default mode is defined in the settings -->
@@ -419,9 +420,15 @@ import * as uuidv1 from 'uuid/v1'
 
 import { Client } from 'dialogflow-gateway'
 
+import {applyReactInVue} from 'veaury'
+// This is a React component
+import LoggedInNav from "./components/common/LoggedInNav"
+// import ReactAA from "./AA"
+
 export default {
   name: 'App',
   components: {
+    // SideNav: applyReactInVue(LoggedInNav),
     WelcomeView,
     ErrorMessage,
     TopHead,
@@ -440,7 +447,7 @@ export default {
     RichSuggesion
   },
   data () {
-    console.log(this)
+    // console.log(this.config)
     return {
       agent: null,
       messages: [],
@@ -522,10 +529,11 @@ export default {
     /* Session should be persistent (in case of page reload, the context should stay) */
     if (this.history() && sessionStorage.getItem('session') !== null) {
       this.session = sessionStorage.getItem('session')
-    } else {
-      this.session = uuidv1()
-      if (this.history()) sessionStorage.setItem('session', this.session)
-    }
+    } 
+    // else {
+    //   this.session = uuidv1()  // will return an error, ignore for now
+    //   if (this.history()) sessionStorage.setItem('session', this.session)
+    // }
 
     /* Cache Agent (this will save bandwith) */
     if (this.history() && sessionStorage.getItem('agent') !== null) {

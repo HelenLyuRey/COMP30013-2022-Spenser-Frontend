@@ -8,13 +8,15 @@ import AuthContext from "../../context/auth-context";
 import { useHistory } from "react-router-dom";
 
 
-const TopNav = (props) => {
+const LoggedInNav = (props) => {
     const auth = useContext(AuthContext);
     let history = useHistory();
 
+	console.log("in???")
+
 	function logoutHandler() {
 		auth.onLogout();
-		console.log("in?")
+		// console.log("in?")
 		history.push("/");
 	}
 	return (
@@ -27,4 +29,4 @@ const TopNav = (props) => {
 	);
 };
 
-export default TopNav;
+export default LoggedInNav;

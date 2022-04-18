@@ -65,13 +65,8 @@ const Profile = ({submitForm}) => {
 
 				<h1>
 					<span>
-						{/* {" "}
-						{connection.firstname +
-							" " +
-							connection.lastname}{" "} */}
 						Hello, {values.name}
 					</span>
-					{/* : "loading"} */}
 				</h1>
 
 				
