@@ -1,0 +1,58 @@
+.topNav-1{
+  margin-top: 2%;
+  width: 100%;
+}
+
+
+.logoAndName {
+  position: absolute;
+  display: inline-block;
+}
+
+.logoAndName a {
+  display: inline-block;
+  background-image: url("../../images/Spenser-logo.png");
+  background-size: 200px 80px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  text-indent: 200px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+}
+
+
+.topnav-button {
+  width: 130px;
+  height: 50px;
+  position: absolute;
+  display: inline-block;
+  border: 2px solid #803BEC;
+  border-radius: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.topnav-button:hover {
+  background-color: #803BEC;
+  border: 2px solid #803BEC;
+}
+
+.topnav-button a {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.3em;
+  line-height: 35px;
+  letter-spacing: -0.02em;
+  color: #803BEC;
+  text-decoration:none;
+  display: block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.topnav-button a:hover {
+  color: #FFFFFF;
+}

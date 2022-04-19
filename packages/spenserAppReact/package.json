@@ -1,0 +1,84 @@
+{
+	"name": "spenser-app",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@emotion/react": "^11.4.1",
+		"@emotion/styled": "^11.3.0",
+		"@material-ui/core": "^4.12.3",
+		"@material-ui/icons": "^4.11.2",
+		"@material-ui/lab": "^4.0.0-alpha.60",
+		"@material-ui/utils": "^4.11.2",
+		"@mui/icons-material": "^5.0.1",
+		"@mui/lab": "^5.0.0-alpha.48",
+		"@mui/material": "^5.0.1",
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/user-event": "^12.8.3",
+		"axios": "^0.21.4",
+		"date-fns": "^2.24.0",
+		"echarts": "^5.2.1",
+		"echarts-for-react": "^3.0.1",
+		"formik": "^2.2.9",
+		"material-table": "^1.69.3",
+		"material-ui-chip-input": "^2.0.0-beta.2",
+		"mui": "0.0.1",
+		"mui-downshift": "^1.4.2",
+		"nodemailer": "^6.7.0",
+		"particles-bg": "^2.5.5",
+		"puppeteer": "^11.0.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-easy-edit": "^1.15.0",
+		"react-google-button": "^0.7.2",
+		"react-google-login": "^5.2.2",
+		"react-icons": "^4.2.0",
+		"react-inline-editing": "^1.0.10",
+		"react-loadingg": "^1.7.2",
+		"react-redux": "^7.2.5",
+		"react-router-dom": "^5.3.0",
+		"react-scripts": "4.0.3",
+		"redux-form": "^8.3.7",
+		"router": "^1.3.5",
+		"styled-components": "^5.3.1",
+		"web-vitals": "^1.1.2"
+	},
+	"scripts": {
+		"start": "webpack serve --config=config/webpack.dev.js"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"engines": {
+		"npm": "6.14.11",
+		"node": "v14.16.0"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@testing-library/react": "^11.2.7",
+		"@babel/core": "^7.12.3",
+        "@babel/plugin-transform-runtime": "^7.12.1",
+        "@babel/preset-env": "^7.12.1",
+        "@babel/preset-react": "^7.12.1",
+        "babel-loader": "^8.1.0",
+        "clean-webpack-plugin": "^3.0.0",
+        "html-webpack-plugin": "^4.5.0",
+        "webpack": "^5.4.0",
+        "webpack-cli": "^4.2.0",
+        "webpack-dev-server": "^3.11.0",
+        "webpack-merge": "^5.2.0"
+	}
+}
