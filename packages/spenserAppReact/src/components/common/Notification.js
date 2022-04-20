@@ -29,7 +29,7 @@ export default function Notification(props) {
       </Button> */}
 			<Snackbar
 				open={props.status}
-				autoHideDuration={4000}
+				autoHideDuration={5000}
 				onClose={handleNotifyClose}
 			>
 				<Alert className="incorrect" style={{width: 300}} onClose={handleNotifyClose} severity={props.type}>
