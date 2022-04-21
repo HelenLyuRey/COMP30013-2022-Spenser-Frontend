@@ -6,7 +6,7 @@ import AuthContext from "../../context/auth-context";
 import { useHistory } from "react-router-dom";
 
 
-const LoggedInNav = (props) => {
+const LoggedInNav = () => {
     const auth = useContext(AuthContext);
     let history = useHistory();
 

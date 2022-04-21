@@ -12,9 +12,6 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useCallback, useState, useEffect } from "react";
 
-// import App from './App.vue'
-// import {applyVueInReact} from 'veaury'
-// const TrackerTest = applyVueInReact(App)
 import TrackerVueApp from './components/tracker/TrackerVueApp';
 
 

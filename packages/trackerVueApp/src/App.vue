@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <!-- TopHead is the header with the information about the app -->
     <TopHead v-if="agent && messages.length > 0" :agent="agent">
       <!-- Audio toggle (on the top right corner), used to toggle the audio output, default mode is defined in the settings -->
@@ -375,7 +375,7 @@
         :uri="suggestion.uri || suggestion.url || suggestion.link"
       />
     </ChatField>
-  </main>
+  </div>
 </template>
 
 <style lang="scss">
@@ -433,7 +433,7 @@ export default {
     RichPicture,
     RichMedia,
     RichTableCard,
-    RichSuggesion
+    RichSuggesion,
   },
   data () {
     return {
