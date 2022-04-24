@@ -414,6 +414,13 @@ import RichSuggesion from './components/RichSuggestion.vue'
 import * as uuidv1 from 'uuid/v1'
 import { Client } from 'dialogflow-gateway'
 
+import conn from '../../spenserReactApp/src/util/conn'
+
+// import {useContext} from 'react';
+// import { useContext } from 'vue'
+
+// const auth = useContext(AuthContext);
+
 
 export default {
   name: 'App',
@@ -433,9 +440,10 @@ export default {
     RichPicture,
     RichMedia,
     RichTableCard,
-    RichSuggesion,
+    RichSuggesion, 
   },
   data () {
+    const userID = this.$userInfo.userID;
     return {
       agent: null,
       messages: [],
@@ -445,7 +453,8 @@ export default {
       loading: false,
       error: null,
       client: new Client(this.config.endpoint),
-      audio: new Audio()
+      audio: new Audio(),
+      userId: userID
     }
   },
   computed: {
@@ -571,12 +580,106 @@ export default {
       this.loading = true
       this.error = null
 
+
       /* Send the request to endpoint */
       this.client.send(request)
         .then(response => {
           this.messages.push(response)
           this.handle(response) // <- trigger the handle function (explanation below)
-          if (this.debug()) console.log(response) // <- log responses in development mode
+          
+          
+          // Get the variables that ready to push to BE
+          const paras = response.queryResult.parameters
+          if (Object.keys(paras).length !== 0){
+          // If the request is in valid format
+            let type = paras['expense-type']
+            let category = ''
+            let entity = ''
+            let description = ''
+            let expense = paras['unit-currency']
+
+            // Type
+            if(typeof type === 'string'){
+                  type = type;
+                } 
+            else if (typeof type === 'object'){
+                type = type[0];
+            }
+
+            // Category + entity + description
+            for (let key in paras) {
+              if(key !== 'unit-currency' && 
+                  key !== 'expense-type' &&
+                  key !== 'date-period'){
+                category = key.split('-')[0]
+                entity = key.split('-')[1]
+                if(typeof paras[key] === 'string'){
+                  description = paras[key];
+                } 
+                else if (typeof paras[key] === 'object'){
+                  if (paras[key].length === 0){
+                    description = ''
+                  } else{
+                    description = paras[key][0];
+                  }
+                }
+              }
+            }
+
+            // Expense
+            if (expense.length === 1){
+              expense = expense[0]['amount']
+            } else{
+              expense = expense['amount']
+            }
+            
+            // Get current month
+            const month = ["January","February","March","April","May",
+                "June","July","August","September","October","November","December"];
+            const d = new Date();
+            let month_name = month[d.getMonth()];
+
+            // console.log(paras)
+            // console.log(category)
+            // console.log(entity)
+            // console.log(description)
+
+            // connect and POST to BE
+            conn
+              .post(`/expense/addExpense/${this.userId}`, 
+              {
+                type: type,
+                category: category,
+                entity: entity,
+                description: description,
+                expense: expense,
+                month: month_name
+              })
+              .then((res) => {
+                  // console.log(res.data)
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+
+              conn
+              .post(`/expense/calculateUserIncomeExpense/${this.userId}`,{})
+              .then(() => {
+                  console.log("user expense summary updated")
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+
+              conn
+              .post(`/expense/calculateMonthlyExpenseIncomeBalance/${this.userId}`,{})
+              .then(() => {
+                  console.log("user monthly expense summary updated")
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          }
         })
         .catch(error => {
           this.error = error.message

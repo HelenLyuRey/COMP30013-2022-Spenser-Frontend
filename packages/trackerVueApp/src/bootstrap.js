@@ -1,12 +1,15 @@
-import { createApp } from 'vue'
+import Vue, { createApp } from 'vue'
 import App from './App'
 
 import config from './config'
 import translations from './translations/translations.json'
 import { registerServiceWorker } from './utils'
 
-const mount = (el) => {
+
+const mount = (el, auth) => {
     const app = createApp(App)
+
+    app.config.globalProperties.$userInfo = auth
 
     registerServiceWorker()
 

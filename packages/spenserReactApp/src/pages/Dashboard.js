@@ -33,8 +33,6 @@ const Dashboard = () => {
     const [userInfo, setUserInfo] = useState("");
     const auth = useContext(AuthContext);
 
-    // console.log(userInfo)
-
     // Get current month
     const month = ["January","February","March","April","May",
 				"June","July","August","September","October","November","December"];
