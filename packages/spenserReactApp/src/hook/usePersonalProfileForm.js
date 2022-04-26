@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import conn from "../util/conn";
 import AuthContext from "../context/auth-context";
 
-const usePersonalProfileForm = (callback, validate) => {
+const usePersonalProfileForm = (callback) => {
     const [values, setValues] = useState({
         name:"",
         password: "",
@@ -17,7 +17,6 @@ const usePersonalProfileForm = (callback, validate) => {
     const auth = useContext(AuthContext);
 
     useEffect(() => {
-		// conn.get(`/getEventOfUser/${auth.userID}`)
 		conn.get(`/user/profile/${auth.userID}`)
 			.then((user) => {
                 // console.log("XXXXX")
@@ -55,12 +54,18 @@ const usePersonalProfileForm = (callback, validate) => {
             ...values,
             [name]: value,
         });
+        
+        // if(name === 'agentVoice'){
+        //     voice.onVoice(value)
+        //     console.log(value)
+        //     console.log(voice, "--")
+        // }
     };
 
     // make sure the page don't refresh after submit information
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors(validate(values));
+        // setErrors(validate(values));
         setIsSumitting(true);
     };
 

@@ -416,11 +416,6 @@ import { Client } from 'dialogflow-gateway'
 
 import conn from '../../spenserReactApp/src/util/conn'
 
-// import {useContext} from 'react';
-// import { useContext } from 'vue'
-
-// const auth = useContext(AuthContext);
-
 
 export default {
   name: 'App',
@@ -444,6 +439,7 @@ export default {
   },
   data () {
     const userID = this.$userInfo.userID;
+    const voiceName = this.$voiceName;
     return {
       agent: null,
       messages: [],
@@ -454,7 +450,8 @@ export default {
       error: null,
       client: new Client(this.config.endpoint),
       audio: new Audio(),
-      userId: userID
+      userId: userID,
+      voiceName: voiceName
     }
   },
   computed: {
@@ -587,6 +584,7 @@ export default {
           this.messages.push(response)
           this.handle(response) // <- trigger the handle function (explanation below)
           
+          console.log(response)
           
           // Get the variables that ready to push to BE
           const paras = response.queryResult.parameters
@@ -679,6 +677,7 @@ export default {
               .catch((err) => {
                 console.log(err);
               });
+
           }
         })
         .catch(error => {
@@ -721,12 +720,41 @@ export default {
           }
         }
 
-        const speech = new SpeechSynthesisUtterance(text)
-        speech.voiceURI = this.config.voice
+
+        // Get user voice
+
+        var synth = window.speechSynthesis;
+        var voices = [];
+        voices = synth.getVoices().sort(function (a, b) {
+          const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
+          if ( aname < bname ) return -1;
+          else if ( aname == bname ) return 0;
+          else return +1;
+        });
+
+        // var EngVoices = []
+        // for (let i = 0; i < voices.length; i++) {
+        //   if (voices[i].lang.split('-')[0] === 'en'){
+        //       EngVoices.push(voices[i])
+        //   }
+        // }
+
+        
+        var pickedVoice = {}
+        for (let i = 0; i < voices.length; i++) {
+          if (voices[i].name === this.voiceName){
+              // pickedVoice.push(voices[i])
+              pickedVoice = voices[i]
+          }
+        }
+
+        console.log(pickedVoice)
+        var speech = new SpeechSynthesisUtterance(text)
+        speech.voice = pickedVoice // needs to be voice object
         speech.lang = this.lang()
         speech.onend = () => this.$refs.input.listen()
 
-        if (!this.muted) window.speechSynthesis.speak(speech) // <- if app is not muted, speak out the speech
+        if (!this.muted) synth.speak(speech) 
       }
     },
     /* Stop audio speech/playback */

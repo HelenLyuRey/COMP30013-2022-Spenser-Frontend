@@ -6,10 +6,11 @@ import translations from './translations/translations.json'
 import { registerServiceWorker } from './utils'
 
 
-const mount = (el, auth) => {
+const mount = (el, auth, voiceName) => {
     const app = createApp(App)
 
     app.config.globalProperties.$userInfo = auth
+    app.config.globalProperties.$voiceName = voiceName
 
     registerServiceWorker()
 

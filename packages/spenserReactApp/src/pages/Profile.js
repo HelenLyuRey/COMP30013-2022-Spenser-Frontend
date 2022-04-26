@@ -27,7 +27,6 @@ const Profile = ({submitForm}) => {
 		setNotifyUpdate(false);
 	};
 
-
 	async function profileSubmitHandler() {
         
 		await conn
@@ -40,6 +39,7 @@ const Profile = ({submitForm}) => {
             .then((res) => {
                 // console.log(res.data)
 				handleNotifyUpdate();
+				sessionStorage.setItem("voiceName", res.data.agent_voice);
             })
 			.catch((err) => {
 				console.log(err);
@@ -108,12 +108,17 @@ const Profile = ({submitForm}) => {
 						<div className="input-wrapper">
 							<select 
 								className="selector" 
-								name="agentVoice" 
+								name="agent_voice" 
 								value={values.agent_voice}
 								onChange={handleChange}>
-								<option value="female-russian">Female-Russian</option>
-								<option value="male-american">Male - American</option>
-								<option value="female-british">Female - British</option>
+								<option>Google UK English Female</option>
+								<option>Google UK English Male</option>
+								<option>Google US English</option>
+								<option>Microsoft Catherine - English (Australia)</option>
+								<option>Microsoft David - English (United States)</option>
+								<option>Microsoft James - English (Australia)</option>
+								<option>Microsoft Mark - English (United States)</option>
+								<option>Microsoft Zira - English (United States)</option>
 							</select>
 						</div>
 					</div>
@@ -123,7 +128,7 @@ const Profile = ({submitForm}) => {
 						<div className="input-wrapper">
 							<select 
 								className="selector" 
-								name="agentPersonality" 
+								name="agent_personality" 
 								value={values.agent_personality}
 								onChange={handleChange}>
 								<option value="friend">Friend</option>

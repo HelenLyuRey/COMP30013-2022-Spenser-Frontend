@@ -21,6 +21,7 @@ import TrackerVueApp from './components/tracker/TrackerVueApp';
 function App({ history }) {
 	const [userID, setUserID] = useState("");
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	// const [voice, setVoice] = useState("")
 
 
 	let routes;
@@ -51,9 +52,6 @@ function App({ history }) {
 				<Route exact path="/dashboard" component={Dashboard} />
 				<Route exact path="/tracker" component={TrackerVueApp} />
 				<Route exact path="/profile" component={Profile} />
-
-				{/* if logged in, the user will be directed to enter the business location */}
-				{/* <Redirect to="/dashboard" /> */}
 			</React.Fragment>
 
 		);
