@@ -1,6 +1,8 @@
 .topNav-1{
   margin-top: 2%;
   width: 100%;
+  height: 90px;
+  position: sticky;
 }
 
 
@@ -26,33 +28,29 @@
 .topnav-button {
   width: 130px;
   height: 50px;
-  position: absolute;
-  display: inline-block;
+  display: grid;
+  place-items: center;
+  justify-items: center;
   border: 2px solid #803BEC;
   border-radius: 20px;
-  align-items: center;
-  display: flex;
+
+  text-decoration: none;
+  font-size: 1.3em;
+  color: #803BEC;
+  font-weight: 600;
 }
 
 .topnav-button:hover {
   background-color: #803BEC;
   border: 2px solid #803BEC;
-}
 
-.topnav-button a {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.3em;
-  line-height: 35px;
-  letter-spacing: -0.02em;
-  color: #803BEC;
-  text-decoration:none;
-  display: block;
-  width: 100%;
-  height: auto;
-  text-align: center;
-}
-
-.topnav-button a:hover {
   color: #FFFFFF;
 }
+
+
+
+/* @media screen and (max-width: 960px){
+  .topnav-button{
+    width: 50px;
+  }
+} */

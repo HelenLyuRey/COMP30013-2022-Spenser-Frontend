@@ -19,6 +19,10 @@ const TopNav = (props) => {
 	const classes = useStyles();
 	return (
 		<div className="topNav-1">
+			<div className="mobileIcon">
+
+			</div>
+			
 			<Grid container spacing={5} className={classes.containerNavbar}>
 				<Grid item xs={12} md={4} className={classes.containerLogo}>
 					<div className="logoAndName">
@@ -28,37 +32,29 @@ const TopNav = (props) => {
 				</Grid>
 
 				<Grid item xs={12} md={2}>
-					<div className="topnav-button">
-						<Link to="/" style={{color: props.home}}>
-							Home
-						</Link>
-					</div>
+					<Link className="topnav-button" to="/">
+						Home
+					</Link>
 				</Grid>
 
-				<Grid item xs={12} md={2}>
-					<div className="topnav-button">
-						<Link to="/feature" style={{color: props.feature}}>
-							Features
-						</Link>
-					</div>
+				<Grid item xs={12} md={2}>			
+					<Link  className="topnav-button" to="/feature">
+						Features
+					</Link>
 				</Grid>
 
 
 				<Grid item xs={12} md={2} >
-					<div className="topnav-button">
-						<Link to="/auth/login" style={{color: props.login }} data-testid="login">
-							Login
-						</Link>
-					</div>
+					<Link className="topnav-button"  to="/auth/login" data-testid="login">
+						Login
+					</Link>
 				</Grid>
 					
 
 				<Grid item xs={12} md={2} >
-					<div className="topnav-button">
-						<Link to="/auth/signup" style={{color: props.signup}} data-testid="signup">
-							Signup
-						</Link>
-					</div>
+					<Link className="topnav-button" to="/auth/signup" data-testid="signup">
+						Signup
+					</Link>
 				</Grid>
 			</Grid>
 		</div>

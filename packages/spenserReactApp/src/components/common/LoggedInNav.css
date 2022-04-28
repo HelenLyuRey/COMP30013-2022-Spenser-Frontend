@@ -1,6 +1,8 @@
+
+
 .sidenav{
     height: 100%;
-    width: 10%;
+    width: 13%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -11,7 +13,43 @@
     opacity: 1;
     transition: 0.3s;
 }
-.sidenav :hover{
+
+.sidenavtitle{
+    display: grid;
+    place-items: center;
+    height: 120px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Mochiy Pop P one', sans-serif;
+    color: white;
+}
+
+.sidebaritem{
+    height: 9%;
+    display: grid;
+    place-items: center;
+    justify-items: center;
+    background-color: #8361C0;
+    border: 2px solid #8361C0;
+    border-radius: 20px;
+
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+
+.sidebaritem:hover{
+    background-color: white;
+    border: 2px solid white;
+
+    text-decoration: none;
+    font-size: 25px;
+    color: #8361C0;
+    font-weight: bold;
+}
+
+
+/* .sidenav :hover{
     opacity: 1;
 }
 
@@ -25,4 +63,61 @@
 
 .sidenav a:hover{
     font: bold;
-}
+} */
+
+/* .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 320px;
+    background-color: #fff;
+
+    &.logo {
+        display: grid;
+        place-items: center;
+        height: 120px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Mochiy Pop P one', sans-serif;
+    }
+
+    &__menu {
+        position: relative;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            place-content: flex-start;
+            padding: 1rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #555555;
+            transition: color 0.3s ease-in-out;
+
+            &.active {
+                color: #fff;
+            }
+
+            &__icon {
+                margin-right: 1rem;
+
+                i {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+
+        &__indicator {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: calc(100% - 40px);
+            border-radius: 10px;
+            background-color: #308efe;
+            z-index: -1;
+            transform: translateX(-50%);
+            transition: 0.3s ease-in-out;
+        }
+    }
+} */

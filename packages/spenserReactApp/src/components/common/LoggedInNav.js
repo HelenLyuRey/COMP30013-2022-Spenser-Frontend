@@ -16,12 +16,31 @@ const LoggedInNav = () => {
 		history.push("/");
 	}
 	return (
+		<>
+		
 		<div className="sidenav">
-			<Link to="/tracker">Tracker</Link>
-			<Link to="/dashboard">Dashboard</Link>
-			<Link to="/profile">Profile</Link>
-			<Link to="/" onClick={logoutHandler}>Logout</Link>
+			<div className="sidenavtitle">
+				Welcome!
+			</div>
+
+			<Link className="sidebaritem" to="/tracker">
+					Tracker
+			</Link>
+
+			<Link className="sidebaritem" to="/dashboard">
+				Dashboard
+			</Link>
+		
+			<Link className="sidebaritem" to="/profile">
+				Profile
+			</Link>
+
+			<Link className="sidebaritem" to="/" onClick={logoutHandler}>
+				Logout
+			</Link>
+
 		</div>
+		</>
 	);
 };
 

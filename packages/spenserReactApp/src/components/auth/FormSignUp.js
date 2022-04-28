@@ -42,10 +42,10 @@ const FormSignUp = ({ submitForm }) => {
 	}
 
 	return (
-		<div className="form-content">
+		<div className="form-background form-content">
 			<form className="form-signup" onSubmit={handleSubmit}>
 				<div className="form-box">
-					<h4>Create a new account</h4>
+					<h2>Create a new account</h2>
 
 	
 					<div className="form-inputs">

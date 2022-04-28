@@ -118,10 +118,11 @@ const FormLogIn = ({ submitForm }) => {
 		return <CommonLoading />;
 	}
 	return (
+		<>
 		<div className="form-background form-content">
 			<form className="form-login" onSubmit={handleSubmit}>
 				<div className="form-box">
-					<h4>Login and get started!</h4>
+					<h2>Welcome Back!</h2>
 
 					<div className="form-inputs">
 						<input
@@ -206,6 +207,7 @@ const FormLogIn = ({ submitForm }) => {
 				</div>
 			</form>
 		</div>
+		</>
 	);
 };
 

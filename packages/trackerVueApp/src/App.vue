@@ -720,7 +720,10 @@ export default {
           }
         }
 
-
+        // console.log(response)
+        // const Resemble = require('@resemble/node')
+        // const resemble = new Resemble('v2', 'MZF5VDr7MkfoC9MeKw1F9gtt')
+        // console.log(resemble)
         // Get user voice
 
         var synth = window.speechSynthesis;
@@ -748,7 +751,6 @@ export default {
           }
         }
 
-        console.log(pickedVoice)
         var speech = new SpeechSynthesisUtterance(text)
         speech.voice = pickedVoice // needs to be voice object
         speech.lang = this.lang()
