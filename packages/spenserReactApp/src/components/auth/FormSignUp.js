@@ -5,6 +5,7 @@ import conn from "../../util/conn.js";
 import "./Form.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import formBackground from "../../images/form-background.jpg"
 
 // import { BrowserRouter as Link } from "react-router-dom";
 
@@ -42,7 +43,9 @@ const FormSignUp = ({ submitForm }) => {
 	}
 
 	return (
-		<div className="form-background form-content">
+		<>
+		<img className="form-img" src={formBackground} alt=""/>
+		<div className="form-content">
 			<form className="form-signup" onSubmit={handleSubmit}>
 				<div className="form-box">
 					<h2>Create a new account</h2>
@@ -104,6 +107,7 @@ const FormSignUp = ({ submitForm }) => {
 				</div>
 			</form>
 		</div>
+		</>
 	);
 };
 

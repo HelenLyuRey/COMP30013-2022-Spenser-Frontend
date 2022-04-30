@@ -6,22 +6,10 @@
 }
 
 
-.logoAndName {
-  position: absolute;
-  display: inline-block;
-}
-
-.logoAndName a {
-  display: inline-block;
-  background-image: url("../../images/Spenser-logo.png");
-  background-size: 200px 80px;
-  background-position: left center;
-  background-repeat: no-repeat;
-  text-indent: 200px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 40px;
-  color: white;
+.spenserLogo{
+  max-width: 65%;
+  max-height: 65%;
+  margin-left: 2%;
 }
 
 

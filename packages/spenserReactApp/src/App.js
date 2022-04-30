@@ -5,6 +5,7 @@ import AuthContext from "./context/auth-context";
 import Dashboard from "./pages/Dashboard";
 // import Tracker from "./pages/Tracker";
 import Profile from "./pages/Profile";
+import Feature from "./pages/Feature"
 import LoginToUseMessage from "./components/common/LoginToUseMessage"
 // import Confirm from "./pages/Confirm";
 import "./App.css";
@@ -61,6 +62,7 @@ function App({ history }) {
 				<Route exact path="/" component={Home} />
 				<Route exact path="/auth/signup" component={FormSignUpPage} />
 				<Route exact path="/auth/login" component={FormLogInPage} />
+				<Route exact path="/feature" component={Feature} />
 
 				<Route exact path="/dashboard" component={LoginToUseMessage} />
 				<Route exact path="/tracker" component={LoginToUseMessage} />

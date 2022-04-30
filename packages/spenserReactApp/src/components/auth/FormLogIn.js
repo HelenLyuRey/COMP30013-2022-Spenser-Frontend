@@ -8,6 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 import Notification from "../common/Notification";
 import { GoogleLogin } from "react-google-login";
 import { CommonLoading } from "react-loadingg";
+import formBackground from "../../images/form-background.jpg"
 
 const FormLogIn = ({ submitForm }) => {
 	const [loading, setLoading] = useState(false);
@@ -119,7 +120,8 @@ const FormLogIn = ({ submitForm }) => {
 	}
 	return (
 		<>
-		<div className="form-background form-content">
+		<img className="form-img" src={formBackground} alt=""/>
+		<div className="form-content">
 			<form className="form-login" onSubmit={handleSubmit}>
 				<div className="form-box">
 					<h2>Welcome Back!</h2>
