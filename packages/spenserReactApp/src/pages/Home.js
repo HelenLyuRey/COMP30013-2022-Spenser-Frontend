@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import { Grid } from '@mui/material';
 import TopNav from "../components/common/TopNav";
 import greyBackground from "../images/grey-background.jpg"
 import rightBackground from "../images/home-right.png"
@@ -14,13 +13,15 @@ const Home = () => {
     <img className="img-left" src={greyBackground} alt=""/>
     <div className="home-body home-left">
         <h2>Spenser</h2>
-        <p className="home-slogan">A voice based expense tracker just for you</p>
+        <p className="home-slogan">
+            Record All Your Expense Only Using Your Voice
+        </p>
         <div className="home-purple-boxline"></div>
         <div className="home-features">
-          <p>EXPENSE TRACKING</p>
-          <p>VOICE INPUT</p>
-          <p>VOICE RESPONSE </p>
-          <p>STATISTICS</p>          
+          <p>IMPROVE PRODUCTIVTY</p>
+          <p>INCREASE FINANCIAL AWARENESS</p>
+          <p>CONVENIENT</p>
+          <p>EASY</p>         
         </div>
     </div>
 

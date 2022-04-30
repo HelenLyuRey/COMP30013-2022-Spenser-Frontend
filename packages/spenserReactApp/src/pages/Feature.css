@@ -1,5 +1,7 @@
+
+
 .featureTitle{
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 5%;
     width: 30%;
     color: #5a5a5a;
@@ -7,6 +9,29 @@
 
 .featureSlogan{
     margin-left: 5%;
-    width: 45%;
-    color: #999999;
+    width: 50%;
+    font-size: large;
+    color: #8e8e8e;
+}
+
+.featureImg{
+    height: 57px;
+    width: 57px;
+    margin: 0 auto 0 0;
+}
+
+.featureNumber{
+    font-size: 9.375rem;
+    background-image: none;
+    font-family: Lalezar;
+    line-height: 0.8;
+    margin: 87px 0 0;
+    color: #caadf7 !important;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.featureContent{
+    padding: 1rem 1rem;
+    vertical-align: middle;
 }
