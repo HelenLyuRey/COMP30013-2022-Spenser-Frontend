@@ -23,6 +23,10 @@ const LoggedInNav = () => {
 				Welcome!
 			</div>
 
+			<Link className="sidebaritem" to="/manual">
+					Manual
+			</Link>
+
 			<Link className="sidebaritem" to="/tracker">
 					Tracker
 			</Link>

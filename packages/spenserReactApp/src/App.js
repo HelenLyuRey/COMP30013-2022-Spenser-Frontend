@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 // import Tracker from "./pages/Tracker";
 import Profile from "./pages/Profile";
 import Feature from "./pages/Feature"
+import UserManual from "./pages/UserManual";
 import LoginToUseMessage from "./components/common/LoginToUseMessage"
 // import Confirm from "./pages/Confirm";
 import "./App.css";
@@ -50,8 +51,9 @@ function App({ history }) {
 	if (isLoggedIn) {
 		routes = (
 			<React.Fragment>
-				<Route exact path="/dashboard" component={Dashboard} />
+				<Route exact path="/manual" component={UserManual} />
 				<Route exact path="/tracker" component={TrackerVueApp} />
+				<Route exact path="/dashboard" component={Dashboard} />
 				<Route exact path="/profile" component={Profile} />
 			</React.Fragment>
 
@@ -64,19 +66,11 @@ function App({ history }) {
 				<Route exact path="/auth/login" component={FormLogInPage} />
 				<Route exact path="/feature" component={Feature} />
 
-				<Route exact path="/dashboard" component={LoginToUseMessage} />
+				<Route exact path="/manual" component={LoginToUseMessage} />
 				<Route exact path="/tracker" component={LoginToUseMessage} />
+				<Route exact path="/dashboard" component={LoginToUseMessage} />
 				<Route exact path="/profile" component={LoginToUseMessage} />
 
-				{/* <Route exact path="/test" component={TrackerTest} /> */}
-				{/* <Route
-					exact
-					path="/confirm/:userId/:confirmationCode"
-					component={Confirm}
-				/> */}
-
-				{/* if logout or want to access the page that login is needed, the user will be directed to the login page */}
-				{/* <Redirect to="/" /> */}
 			</React.Fragment>
 		);
 	}

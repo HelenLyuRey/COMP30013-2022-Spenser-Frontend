@@ -62,7 +62,7 @@ const FormLogIn = ({ submitForm }) => {
 					console.log(res.data.data);
 					setTimeout(async () => {
 						auth.onLogin(res.data.data._id);
-						history.push("/dashboard");
+						history.push("/manual");
 					}, 2000);
 				} else if (res.data.code === -4) {
 					console.log("account pending");

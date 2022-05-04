@@ -9,6 +9,7 @@ import MonthlyBalance from "../components/dashboard/MonthlyBalance";
 import EntityAccordions from '../components/dashboard/EntityAccordion';
 import conn from '../util/conn';
 import AuthContext from "../context/auth-context";
+// import manualBackground from "../images/manual-background.png"
 
 const useStyles = makeStyles(() => ({
 	containerGrid: {
@@ -55,6 +56,7 @@ const Dashboard = () => {
     return (
         <div>
             <div className="background"></div>
+            {/* <img className="manual-bg-img" src={manualBackground} alt=""/> */}
             <LoggedInNav/>
             <div className='dashboardMain'>
                 <Container className={classes.containerGrid}>
