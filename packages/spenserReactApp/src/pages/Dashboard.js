@@ -6,7 +6,7 @@ import './Dashboard.css'
 import CategoryDistribution from "../components/dashboard/CategoryDistribution";
 import MonthlyDistribution from "../components/dashboard/MonthlyDistribution";
 import MonthlyBalance from "../components/dashboard/MonthlyBalance";
-import EntityAccordions from '../components/dashboard/EntityAccordion';
+import CategoryAccordions from '../components/dashboard/CategoryAccordion';
 import conn from '../util/conn';
 import AuthContext from "../context/auth-context";
 // import manualBackground from "../images/manual-background.png"
@@ -118,14 +118,15 @@ const Dashboard = () => {
                             <Card>
                                 <CategoryDistribution
                                     category = {userInfo.current_month_category_expense}
-                                    title_text = {"Spending Distribution"}
-                                    series_name = {"Category"}/>
+                                    title_text = {"Expense and Income Distribution"}
+                                    // series_name = {"Category"}
+                                    />
                             </Card>
                         </Grid>
 
                         <Grid item xs={12}>
                             <Card>
-                                <EntityAccordions
+                                <CategoryAccordions
                                     categories = {userInfo.current_month_description_expense}/>
                             </Card>
                         </Grid>

@@ -3,8 +3,6 @@ import React from "react";
 
 const CategoryDistribution = (props) => {
 	const category_json = props.category; // all category object
-	let title_text = 'Spending distribution';
-	let series_name = 'Category'
 	
 	// console.log(category)
 	let data = []
@@ -54,11 +52,11 @@ const CategoryDistribution = (props) => {
 		},
 		series: [
 		  {
-			name: props.series_name,
+			// name: props.series_name,
 			type: 'pie',
 			radius: '70%',
 			label: {
-				formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+				formatter: ' {b|{b}: }{c}  {per|{d}%}  ',
 				backgroundColor: '#F6F8FC',
 				borderColor: '#8C8D8E',
 				borderWidth: 1,
