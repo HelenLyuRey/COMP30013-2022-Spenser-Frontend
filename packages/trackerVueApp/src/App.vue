@@ -661,7 +661,10 @@ export default {
               });
 
               conn
-              .post(`/expense/calculateUserIncomeExpense/${this.userId}`,{})
+              .post(`/expense/calculateUserIncomeExpense/${this.userId}`,
+              {
+                month: month_name // Only display the current month
+              })
               .then(() => {
                   console.log("user expense summary updated")
               })

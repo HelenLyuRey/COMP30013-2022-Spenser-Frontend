@@ -2,6 +2,10 @@
     font-family: 'Open Sans', sans-serif;
 } */
 
+.manual-container h1{
+    color: #E72C66;
+}
+
 .manual-container p{
     font-size: 1.2rem;
 }
@@ -20,7 +24,7 @@
     font-weight: bold;
     color: white;
 
-    margin-top: 17%;
+    margin-top: 10%;
 }
 
 .start-now-btn:hover{
@@ -43,4 +47,16 @@
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+.agent-container{
+	border-radius: 25px;
+	background: white;
+	text-align: center;
+}
+
+.agent-container p{
+    margin-left: 14%;
+    width: 75%;
+    font-size: 1rem;
 }

@@ -33,38 +33,61 @@ const Dashboard = () => {
     const classes = useStyles();
     const [userInfo, setUserInfo] = useState("");
     const auth = useContext(AuthContext);
+    
 
     // Get current month
     const month = ["January","February","March","April","May",
 				"June","July","August","September","October","November","December"];
 	const d = new Date();
 	let month_name = month[d.getMonth()];
-
-    const zero = 0
+    const [wantedMonth, setWantedMonth] =  useState(month_name);
 
     useEffect(() => {
 		conn.get(`/user/profile/${auth.userID}`)
 			.then((user) => {
-				setUserInfo(user.data);
-				// console.log(user.data);
+                setUserInfo(user.data);
 			})
 			.catch((e) => {
 				console.log(e);
 			});
 	}, [userInfo, auth.userID]);
 
+    async function searchMonthlyInfo(e) {
+        e.preventDefault();
+        let month = document.getElementById("searchMonth").value;
+        await
+        conn
+        .post(`/expense/calculateUserIncomeExpense/${auth.userID}`,
+        {
+            month: month // Only display the current month
+        })
+        .then(() => {
+            console.log(`user expense summary updated for ${month}`)
+            setWantedMonth(month)
+        })
+        .catch((err) => {
+        console.log(err);
+        });
+    }
     return (
         <div>
             <div className="background"></div>
-            {/* <img className="manual-bg-img" src={manualBackground} alt=""/> */}
             <LoggedInNav/>
             <div className='dashboardMain'>
+                <div className='search-container'>
+                    <form>
+                        <input type="text" placeholder="Input month to search" id="searchMonth"/>
+                        <button onClick={searchMonthlyInfo}>
+                            Search
+                        </button>
+                    </form>
+                </div>
                 <Container className={classes.containerGrid}>
                     <Grid container spacing={2} >
                         <Grid item xs={3}>
                             <Card>
-                                <h1>{month_name}</h1>
-                                <p>Current Month</p>
+                                <h1>{wantedMonth}</h1>
+                                <p>Month</p>
                             </Card>
                         </Grid>
 
@@ -94,14 +117,16 @@ const Dashboard = () => {
                         <Grid item xs={12}>
                             <Card>
                                 <CategoryDistribution
-                                    category = {userInfo.current_month_category_expense}/>
+                                    category = {userInfo.current_month_category_expense}
+                                    title_text = {"Spending Distribution"}
+                                    series_name = {"Category"}/>
                             </Card>
                         </Grid>
 
                         <Grid item xs={12}>
                             <Card>
                                 <EntityAccordions
-                                    entities = {userInfo.current_month_entity_expense}/>
+                                    categories = {userInfo.current_month_description_expense}/>
                             </Card>
                         </Grid>
 

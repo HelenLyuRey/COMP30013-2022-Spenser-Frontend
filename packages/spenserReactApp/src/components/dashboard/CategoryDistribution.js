@@ -2,15 +2,33 @@ import ReactECharts from "echarts-for-react";
 import React from "react";
 
 const CategoryDistribution = (props) => {
-	const category = props.category; // all category object
+	const category_json = props.category; // all category object
+	let title_text = 'Spending distribution';
+	let series_name = 'Category'
+	
 	// console.log(category)
 	let data = []
 
-	if(category != undefined && category != null){
-		Object.keys(category).map(function(key) {
+	if(category_json !== undefined && category_json !== null){
+		const all_categories = Object.keys(category_json)
+		all_categories.forEach(function(category){
+			// Do not show the categories which 0 expense
+			if (category_json[category] === 0){
+				delete category_json[category]
+			}
+		})
+		Object.keys(category_json).map(function(key) {
+			let key_cap = ''
+			// Getting rid of the underscore in the name
+			if(key.includes('_')){
+				const entity_space = key.split('_').join(' ')
+				key_cap = entity_space.charAt(0).toUpperCase() + entity_space.slice(1);
+			} else{
+				key_cap = key.charAt(0).toUpperCase() + key.slice(1);
+			}
 			data.push({
-			  value: category[key],
-			  name: key
+			  value: category_json[key],
+			  name: key_cap
 			  });
 		});
 	}
@@ -23,7 +41,7 @@ const CategoryDistribution = (props) => {
 	
 	let option = {
 		title: {
-		  text: 'Spending Distribution',
+		  text: props.title_text,
 		  left: 'center'
 		},
 		tooltip: {
@@ -36,7 +54,7 @@ const CategoryDistribution = (props) => {
 		},
 		series: [
 		  {
-			name: 'Category',
+			name: props.series_name,
 			type: 'pie',
 			radius: '70%',
 			label: {

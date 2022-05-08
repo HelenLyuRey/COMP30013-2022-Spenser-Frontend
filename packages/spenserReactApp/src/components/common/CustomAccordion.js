@@ -5,6 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import "../dashboard/dashboard.css";
+import CategoryDistribution from '../dashboard/CategoryDistribution';
 
 export default function CustomAccordion(props) {
   const [expanded, setExpanded] = React.useState(false);
@@ -14,22 +15,29 @@ export default function CustomAccordion(props) {
   };
 
 
-  function entityList(list){
-    var elements = [];
+//   function entityList(entities){
+//     var elements = [];
 
-    if(list != undefined && list != null){
-      Object.entries(list).forEach((entry) => {
-        const [key, value] = entry;
-        const key_removed = key.slice(0, key.indexOf('_'));
-        const key_cap = key_removed.charAt(0).toUpperCase() + key_removed.slice(1);
-        if(value !== 0)
-          elements.push(<li>{key_cap + ": " + value}</li>);
-      })
-    }else{
-      elements.push(<li>No value yet</li>);
-    }
-    return elements;
-}
+//     if(entities != undefined && entities != null){
+//       const entity_names = Object.keys(entities)
+//       entity_names.forEach((entity)=>{
+//           let entity_cap = ''
+//           if(entity.includes('_')){
+//               const entity_space = entity.split('_').join(' ')
+//               entity_cap = entity_space.charAt(0).toUpperCase() + entity_space.slice(1);
+//           } else{
+//               entity_cap = entity.charAt(0).toUpperCase() + entity.slice(1);
+//           }
+          
+//           if(entities[entity] !== 0){
+//               elements.push(<li>{entity_cap + ": " + "$ " + entities[entity]}</li>);
+//           }
+//       })
+//     }else{
+//       elements.push(<li>No value yet</li>);
+//     }
+//     return elements;
+// }
 
   return (
     <div>
@@ -39,6 +47,9 @@ export default function CustomAccordion(props) {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
+          sx={{
+            backgroundColor: "#EBEBEB"
+          }}
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
             {props.name}
@@ -47,10 +58,11 @@ export default function CustomAccordion(props) {
         </AccordionSummary>
         <AccordionDetails>
           {/* <Typography> */}
-              <div className="parent-list">
-                <ul>
+              <div>
+                {/* <ul>
                     {entityList(props.list)}
-                </ul>
+                </ul> */}
+                {props.inside}
             </div>
           {/* </Typography> */}
         </AccordionDetails>

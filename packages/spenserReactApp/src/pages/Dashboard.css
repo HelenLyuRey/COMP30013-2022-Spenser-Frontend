@@ -9,8 +9,27 @@
     position: absolute;
     left: 10%;
     right: 5%;
-    top: 5%;
+    top: 1%;
     bottom: 0%;
     overflow-x: scroll;
     text-align: center;
+}
+
+.search-container{
+    margin-right: 6%;
+    float: right;
+    padding: 1%;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container input{
+    font-size: 1rem;
+    height: 35px;
+    width: 70%;
+}
+
+.search-container button{
+    height: 35px;
 }
