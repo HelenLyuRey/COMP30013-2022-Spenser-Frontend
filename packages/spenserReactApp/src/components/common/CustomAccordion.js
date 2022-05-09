@@ -48,7 +48,7 @@ export default function CustomAccordion(props) {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
           sx={{
-            backgroundColor: "#EBEBEB"
+            backgroundColor: "#f5f5f5"
           }}
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>

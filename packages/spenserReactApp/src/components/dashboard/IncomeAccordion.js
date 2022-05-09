@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
-import CustomAccordion from '../common/CustomAccordion'
 import EntityAccordion from './EntityAccordion';
 
-export default function CategoryAccordions(props) {
+export default function SpendingAccordions(props) {
 
     function sum( obj ) {
         var sum = 0;
@@ -16,16 +15,23 @@ export default function CategoryAccordions(props) {
       }
 
 
-    const categories = props.categories;
+    let categories = props.categories;
     let categories_all_values = []
     let categories_keys = []
 
     let entity_expense_list = [] // list of list
     let category_expense = [] // list of numbers
 
-    if (categories !== undefined && categories !== null){
-        categories_all_values = Object.values(categories)
-        categories_keys = Object.keys(categories)
+    if (categories !== undefined && categories !== null){   
+      categories = JSON.parse(JSON.stringify(categories))
+      const all_categories = Object.keys(categories)
+      all_categories.forEach(function(category){
+        if (category !== "income"){
+          delete categories[category]
+        }
+      })
+      categories_all_values = Object.values(categories)
+      categories_keys = Object.keys(categories)
     }
 
     categories_keys.forEach((name, i) =>(
@@ -48,22 +54,17 @@ export default function CategoryAccordions(props) {
   return (
     <div>
         <Typography sx={{fontWeight: 'bold', mt: 2, mb: 2}} variant="h7" component="div">
-            Expense and Income Breakdown
+            Income Breakdown
         </Typography>
         
         {categories_all_values.map((category, i) =>(
-            <CustomAccordion
-            name={categories_keys[i]}
-            secondary={`${categories_keys[i]} category breakdown: $ ${category_expense[i]} `}  
-            inside = {
-                <EntityAccordion
-                category_json = {category}
-                entity_expense = {entity_expense_list[i]}/>
-            }
-            /> 
+            <EntityAccordion
+            category_json = {category}
+            entity_expense = {entity_expense_list[i]}/>
         ))}
 
 
     </div>
   );
 }
+

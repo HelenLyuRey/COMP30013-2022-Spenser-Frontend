@@ -2,16 +2,18 @@ import ReactECharts from "echarts-for-react";
 import React from "react";
 
 const CategoryDistribution = (props) => {
-	const category_json = props.category; // all category object
 	
-	// console.log(category)
+	let category_json = props.category; 
+	// all category object
+	
 	let data = []
 
 	if(category_json !== undefined && category_json !== null){
+		category_json = JSON.parse(JSON.stringify(category_json))
 		const all_categories = Object.keys(category_json)
 		all_categories.forEach(function(category){
-			// Do not show the categories which 0 expense
-			if (category_json[category] === 0){
+			// Do not show income
+			if (category === "income"){
 				delete category_json[category]
 			}
 		})

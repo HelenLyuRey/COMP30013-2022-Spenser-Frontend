@@ -6,7 +6,8 @@ import './Dashboard.css'
 import CategoryDistribution from "../components/dashboard/CategoryDistribution";
 import MonthlyDistribution from "../components/dashboard/MonthlyDistribution";
 import MonthlyBalance from "../components/dashboard/MonthlyBalance";
-import CategoryAccordions from '../components/dashboard/CategoryAccordion';
+import SpendingAccordions from '../components/dashboard/SpendingAccordion';
+import IncomeAccordions from '../components/dashboard/IncomeAccordion';
 import conn from '../util/conn';
 import AuthContext from "../context/auth-context";
 // import manualBackground from "../images/manual-background.png"
@@ -55,6 +56,7 @@ const Dashboard = () => {
     async function searchMonthlyInfo(e) {
         e.preventDefault();
         let month = document.getElementById("searchMonth").value;
+        console.log(month)
         await
         conn
         .post(`/expense/calculateUserIncomeExpense/${auth.userID}`,
@@ -102,7 +104,7 @@ const Dashboard = () => {
                         <Grid item xs={3}>
                             <Card>
                                 <h1 style={{color:"rgb(161, 38, 38)"}}>
-                                    ${userInfo.current_month_total_expense}
+                                    - ${userInfo.current_month_total_expense}
                                 </h1>
                                 <p>Expense</p>
                             </Card>
@@ -118,7 +120,7 @@ const Dashboard = () => {
                             <Card>
                                 <CategoryDistribution
                                     category = {userInfo.current_month_category_expense}
-                                    title_text = {"Expense and Income Distribution"}
+                                    title_text = {"Spending Distribution"}
                                     // series_name = {"Category"}
                                     />
                             </Card>
@@ -126,7 +128,14 @@ const Dashboard = () => {
 
                         <Grid item xs={12}>
                             <Card>
-                                <CategoryAccordions
+                                <SpendingAccordions
+                                    categories = {userInfo.current_month_description_expense}/>
+                            </Card>
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <Card>
+                                <IncomeAccordions
                                     categories = {userInfo.current_month_description_expense}/>
                             </Card>
                         </Grid>
