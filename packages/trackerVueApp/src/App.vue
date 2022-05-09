@@ -660,6 +660,8 @@ export default {
                 console.log(err);
               });
 
+              console.log("come in??")
+
               conn
               .post(`/expense/calculateUserIncomeExpense/${this.userId}`,
               {

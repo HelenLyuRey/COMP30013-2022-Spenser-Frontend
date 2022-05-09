@@ -34,14 +34,6 @@ const Dashboard = () => {
     const classes = useStyles();
     const [userInfo, setUserInfo] = useState("");
     const auth = useContext(AuthContext);
-    
-
-    // Get current month
-    const month = ["January","February","March","April","May",
-				"June","July","August","September","October","November","December"];
-	const d = new Date();
-	let month_name = month[d.getMonth()];
-    const [wantedMonth, setWantedMonth] =  useState(month_name);
 
     useEffect(() => {
 		conn.get(`/user/profile/${auth.userID}`)
@@ -65,7 +57,6 @@ const Dashboard = () => {
         })
         .then(() => {
             console.log(`user expense summary updated for ${month}`)
-            setWantedMonth(month)
         })
         .catch((err) => {
         console.log(err);
@@ -88,7 +79,7 @@ const Dashboard = () => {
                     <Grid container spacing={2} >
                         <Grid item xs={3}>
                             <Card>
-                                <h1>{wantedMonth}</h1>
+                                <h1>{userInfo.month}</h1>
                                 <p>Month</p>
                             </Card>
                         </Grid>
