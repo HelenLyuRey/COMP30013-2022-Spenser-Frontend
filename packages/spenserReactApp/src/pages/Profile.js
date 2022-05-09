@@ -111,14 +111,18 @@ const Profile = ({submitForm}) => {
 								name="agent_voice" 
 								value={values.agent_voice}
 								onChange={handleChange}>
-								<option>Google UK English Female</option>
+									<option>Aria - Assertive female agent</option>
+									<option>Emily - Relaxed female agent</option>
+									<option>Guy - Excited male agent</option>
+									<option>Jenny - Caring female agent</option>
+								{/* <option>Google UK English Female</option>
 								<option>Google UK English Male</option>
 								<option>Google US English</option>
 								<option>Microsoft Catherine - English (Australia)</option>
 								<option>Microsoft David - English (United States)</option>
 								<option>Microsoft James - English (Australia)</option>
 								<option>Microsoft Mark - English (United States)</option>
-								<option>Microsoft Zira - English (United States)</option>
+								<option>Microsoft Zira - English (United States)</option> */}
 							</select>
 						</div>
 					</div>

@@ -744,17 +744,47 @@ export default {
         //       EngVoices.push(voices[i])
         //   }
         // }
-
-        
-        var pickedVoice = {}
+        var chosenVoices = []
         for (let i = 0; i < voices.length; i++) {
-          if (voices[i].name === this.voiceName){
-              // pickedVoice.push(voices[i])
-              pickedVoice = voices[i]
+          if (voices[i].lang.split('-')[0] === 'en' && voices[i].name.match(/\(([^()]*)\)/)[1] == 'Natural'){
+              // EngVoices.push(voices[i])
+              var name = voices[i].name.split(' ')
+              if (name.includes('Aria') || name.includes('Emily') || name.includes('Guy')|| name.includes('Jenny')){
+                chosenVoices.push(voices[i])
+              }
+                
           }
         }
 
+        // console.log(chosenVoices)
+
         var speech = new SpeechSynthesisUtterance(text)
+        
+        var pickedVoice = {}
+        for (let i = 0; i < chosenVoices.length; i++) {
+          var agentName = chosenVoices[i].name.split(' ')[1]
+          console.log(agentName)
+          console.log(this.voiceName.split(' ')[0])
+          console.log(agentName === this.voiceName.split(' ')[0])
+          if (agentName === this.voiceName.split(' ')[0]){
+            console.log('inn??')
+              // pickedVoice.push(voices[i])
+              pickedVoice = chosenVoices[i]
+              if(agentName === 'Aria'){
+                speech.rate = 1.2
+              }
+              if(agentName === 'Emily'){
+                speech.rate = 0.9
+              }
+              if(agentName === 'Guy'){
+                speech.rate = 1.1
+              }
+              if(agentName === 'Jenny'){
+                speech.rate = 1
+              }
+          }
+        }
+
         speech.voice = pickedVoice // needs to be voice object
         speech.lang = this.lang()
         speech.onend = () => this.$refs.input.listen()
