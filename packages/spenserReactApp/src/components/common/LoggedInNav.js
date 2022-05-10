@@ -38,6 +38,17 @@ const LoggedInNav = () => {
         });
     }
 
+	async function getVoice(){
+		await conn.get(`/user/profile/${auth.userID}`)
+        .then((user) => {
+            sessionStorage.setItem("voiceName", user.data.agent_voice);
+			location.reload() // Need to repload otherwise the voice doesn't change
+        })
+        .catch((e) => {
+            console.log(e);
+        });
+	}
+
 	return (
 		<>
 		
@@ -50,7 +61,7 @@ const LoggedInNav = () => {
 					Manual
 			</Link>
 
-			<Link className="sidebaritem" to="/tracker">
+			<Link className="sidebaritem" to="/tracker" onClick={getVoice}>
 					Tracker
 			</Link>
 

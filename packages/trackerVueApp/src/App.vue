@@ -766,10 +766,8 @@ export default {
         for (let i = 0; i < chosenVoices.length; i++) {
           var agentName = chosenVoices[i].name.split(' ')[1]
           console.log(agentName)
-          console.log(this.voiceName.split(' ')[0])
-          console.log(agentName === this.voiceName.split(' ')[0])
+          console.log(this.voiceName)
           if (agentName === this.voiceName.split(' ')[0]){
-            console.log('inn??')
               // pickedVoice.push(voices[i])
               pickedVoice = chosenVoices[i]
               if(agentName === 'Aria'){

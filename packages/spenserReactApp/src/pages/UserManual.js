@@ -1,5 +1,5 @@
 import LoggedInNav from "../components/common/LoggedInNav"
-import React from 'react'
+import React, {useContext } from 'react'
 import manualBackground from "../images/manual-background.png"
 import "./UserManual.css"
 import { Avatar, makeStyles, Container, Grid } from "@material-ui/core";
@@ -10,6 +10,8 @@ import Guy from "../images/agent_guy.jpg"
 import Aria from "../images/agent_aria.jpg"
 import Jenny from "../images/agent_jenny.jpg"
 // import { Avatar, makeStyles } from "@material-ui/core";
+import conn from '../util/conn';
+import AuthContext from "../context/auth-context";
 
 
 const useStyles = makeStyles(() => ({
@@ -26,8 +28,23 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
+
+
 const UserManual = () => {     
 	const classes = useStyles();
+    const auth = useContext(AuthContext);
+
+    async function getVoice(){
+        await conn.get(`/user/profile/${auth.userID}`)
+        .then((user) => {
+            sessionStorage.setItem("voiceName", user.data.agent_voice);
+            location.reload() // Need to repload otherwise the voice doesn't change
+        })
+        .catch((e) => {
+            console.log(e);
+        });
+    }
+
     return (
 		<div className="manual-container">
 			<LoggedInNav/>
@@ -66,7 +83,7 @@ const UserManual = () => {
                              <span style={{fontWeight:"bold"}}> expense category list </span> 
                              by exploring the slider on the right!</p>
 
-                             <Link className="start-now-btn" to="/tracker">
+                             <Link className="start-now-btn" to="/tracker" onClick={getVoice}>
                                     Start Now!
                             </Link>
                     </Grid>

@@ -39,7 +39,7 @@ const Profile = ({submitForm}) => {
             .then((res) => {
                 // console.log(res.data)
 				handleNotifyUpdate();
-				sessionStorage.setItem("voiceName", res.data.agent_voice);
+				// sessionStorage.setItem("voiceName", res.data.agent_voice);
             })
 			.catch((err) => {
 				console.log(err);

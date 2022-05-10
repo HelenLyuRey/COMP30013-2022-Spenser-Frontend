@@ -1,9 +1,9 @@
 import LoggedInNav from "../components/common/LoggedInNav"
 import React from 'react'
+import conn from '../../util/conn'
 
 
-const Tracker = () => {     
-	
+const Tracker = () => {  
     return (
 		<div>
 			<LoggedInNav/>
