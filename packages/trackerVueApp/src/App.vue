@@ -609,8 +609,14 @@ export default {
               if(key !== 'unit-currency' && 
                   key !== 'expense-type' &&
                   key !== 'date-period'){
+                
                 category = key.split('-')[0]
-                entity = key.split('-')[1]
+                const entity_list = key.split('-')
+                entity = entity_list[1]
+
+                if(entity_list.length > 2){
+                    entity = entity_list.slice(-2).join(' ')
+                }
                 if(typeof paras[key] === 'string'){
                   description = paras[key];
                 } 

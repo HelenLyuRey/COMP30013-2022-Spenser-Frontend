@@ -9,7 +9,6 @@ const usePersonalProfileForm = (callback) => {
         name:"",
         password: "",
         agent_voice: "",
-        agent_personality: ""
     });
 
     const [errors, setErrors] = useState({});
@@ -27,7 +26,6 @@ const usePersonalProfileForm = (callback) => {
                     ["name"]: user.data.name,
                     ["password"]: user.data.password,
                     ["agent_voice"]: user.data.agent_voice,
-                    ["agent_personality"]: user.data.agent_personality
                 })
                 // console.log(values.firstName)
 			})

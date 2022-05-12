@@ -2,13 +2,19 @@
   <div class="welcome-view">
     <!-- Agent Icon -->
     <img v-if="agent.avatarUri" class="agent-icon" :alt="agent.displayName" :src="agent.avatarUri">
-    <img v-else class="agent-icon" src="https://console.dialogflow.com/api-client/assets/img/logo-short.png" :alt="agent.displayName">
+    <img v-else class="agent-icon" src="../assets/images/logo.png" :alt="agent.displayName">
 
     <!-- Agent Title -->
-    <div class="agent-title">{{agent.displayName}}</div>
+    <div class="agent-title">Welcome To Spenser!</div>
 
+    <br/>
     <!-- Agent Description -->
-    <div class="agent-description">{{agent.description}}</div>
+    <div class="agent-description">
+
+      Click on the microphone below and say something to trigger the agent!
+
+    </div>
+
 
     <!-- Language picker, if your Agent supports more than one language -->
     <div v-if="agent.supportedLanguageCodes && agent.supportedLanguageCodes.length > 0" class="language-picker">

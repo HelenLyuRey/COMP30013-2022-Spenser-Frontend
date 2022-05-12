@@ -2,7 +2,7 @@ import LoggedInNav from "../components/common/LoggedInNav"
 import React, {useContext } from 'react'
 import manualBackground from "../images/manual-background.png"
 import "./UserManual.css"
-import { Avatar, makeStyles, Container, Grid } from "@material-ui/core";
+import {Avatar, makeStyles, Container, Grid } from "@material-ui/core";
 import CategoryCarousel from "../components/manual/CategoryCarousel";
 import { Link } from "react-router-dom";
 import Emily from "../images/agent_emily.jpg"

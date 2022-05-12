@@ -36,6 +36,16 @@ const LoggedInNav = () => {
         .catch((err) => {
         console.log(err);
         });
+
+		await
+		conn
+		.post(`/expense/calculateMonthlyExpenseIncomeBalance/${this.userId}`,{})
+		.then(() => {
+			console.log("user monthly expense summary updated")
+		})
+		.catch((err) => {
+		  console.log(err);
+		});
     }
 
 	async function getVoice(){

@@ -34,7 +34,7 @@ const Profile = ({submitForm}) => {
                 name: values.name,
                 password: values.password,
 				agent_voice: values.agent_voice,
-        		agent_personality: values.agent_personality
+
 			})
             .then((res) => {
                 // console.log(res.data)
@@ -60,7 +60,7 @@ const Profile = ({submitForm}) => {
 			<LoggedInNav/>
 
 
-			<div className='dashboardMain'>
+			<div className='profile-title'>
 
 
 				<h1>
@@ -123,22 +123,6 @@ const Profile = ({submitForm}) => {
 								<option>Microsoft James - English (Australia)</option>
 								<option>Microsoft Mark - English (United States)</option>
 								<option>Microsoft Zira - English (United States)</option> */}
-							</select>
-						</div>
-					</div>
-
-					<div className="field">
-						<div className="field_label">Choose your agent personality</div>
-						<div className="input-wrapper">
-							<select 
-								className="selector" 
-								name="agent_personality" 
-								value={values.agent_personality}
-								onChange={handleChange}>
-								<option value="friend">Friend</option>
-								<option value="aunt">Aunt</option>
-								<option value="butler">Butler</option>
-								<option value="admirer">Admirer</option>
 							</select>
 						</div>
 					</div>
