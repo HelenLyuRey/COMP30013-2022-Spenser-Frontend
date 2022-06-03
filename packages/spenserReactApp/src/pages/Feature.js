@@ -89,7 +89,8 @@ const Feature = () => {
                                             <img className="featureImg" src={featureVoiceInput} alt=""/>
                                             <h3>Voice Input</h3>
                                             <p>You can track you expenses by simply using your voice.
-                                             It is simple to use wouldn't take much time and effort
+                                             Do you know that voice input can increase productivity by 3 times than typing?
+                                             And it is convenient if you hands are occupied.
                                             </p>
                                         </div>
                                     </Grid>
@@ -105,8 +106,7 @@ const Feature = () => {
                                         <div className="featureContent">
                                             <img className="featureImg" src={featureVoiceResponse} alt=""/>
                                             <h3>Voice Response</h3>
-                                            <p>You can to select different voices and personalities 
-                                                for your voice agent and different dialogue 
+                                            <p>You can to select different voice agent and different dialogue 
                                                 responses are triggered according to role 
                                                 settings and expense scenarios.</p>
                                         </div>

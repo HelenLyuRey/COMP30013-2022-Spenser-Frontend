@@ -98,30 +98,15 @@ const UserManual = () => {
                         <div className="agent-container">
                             <br/>
                             <Avatar 
-                                src={Emily}
-                                className={classes.avatar} />
-                            <h3>Emily</h3>
-                            <h4>Relaxed Agent</h4>
-                            <p>Emily has a relaxed voice, 
-                                which sounds very chill and pleasant. 
-                                You may choose to use this agent if you
-                                 had a busy day at work and just would like
-                                  to turn on your relaxed mood.</p>
-                            <br/>
-                        </div>
-
-                    </Grid>
-                    <Grid item xs={3}>
-                        <div className="agent-container">
-                            <br/>
-                            <Avatar 
-                            src={Guy}
+                            src={Jenny}
                             className={classes.avatar} />
-                            <h3>Guy</h3>
-                            <h4>Excited Agent</h4>
-                            <p>Guy has a casual conversational tone 
-                                while at eye level with the user. He is fun 
-                                being a friend and lightens the mood with his wittiness.</p>
+                            <h3>Jenny</h3>
+                            <h4>Neutral Agent</h4>
+                            <p>Jenny has a neutral voice, she doesn't show any emotion 
+                                with her voice and she is just doing her job. 
+                                You may choose this agent if you don't
+                                want to get too attached to your agent. 
+                                </p>
                             <br/>
                         </div>
                     </Grid>
@@ -144,15 +129,29 @@ const UserManual = () => {
                         <div className="agent-container">
                             <br/>
                             <Avatar 
-                            src={Jenny}
+                            src={Guy}
                             className={classes.avatar} />
-                            <h3>Jenny</h3>
-                            <h4>Caring Agent</h4>
-                            <p>Jenny has a caring voice, 
-                                which make you feel like you are 
-                                talking to someone like your mom or aunt who
-                                cares deeply about the your well-being and 
-                                takes things serious</p>
+                            <h3>Guy</h3>
+                            <h4>Energetic Agent</h4>
+                            <p>Guy has a casual conversational tone 
+                                while at eye level with the user. He is fun 
+                                being a friend and lightens the mood with his wittiness.</p>
+                            <br/>
+                        </div>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <div className="agent-container">
+                            <br/>
+                            <Avatar 
+                                src={Emily}
+                                className={classes.avatar} />
+                            <h3>Emily</h3>
+                            <h4>Relaxed Agent</h4>
+                            <p>Emily has a relaxed voice, 
+                                which sounds very chill and pleasant. 
+                                You may choose to use this agent if you
+                                 had a busy day at work and just would like
+                                  to turn on your relaxed mood.</p>
                             <br/>
                         </div>
                     </Grid>

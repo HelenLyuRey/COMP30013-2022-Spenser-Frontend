@@ -111,10 +111,10 @@ const Profile = ({submitForm}) => {
 								name="agent_voice" 
 								value={values.agent_voice}
 								onChange={handleChange}>
+									<option>Jenny - Neutral female agent</option>
 									<option>Aria - Assertive female agent</option>
-									<option>Emily - Relaxed female agent</option>
-									<option>Guy - Excited male agent</option>
-									<option>Jenny - Caring female agent</option>
+									<option>Guy - Energetic male agent</option>
+									<option>Emily - Relaxed female agent</option>							
 								{/* <option>Google UK English Female</option>
 								<option>Google UK English Male</option>
 								<option>Google US English</option>

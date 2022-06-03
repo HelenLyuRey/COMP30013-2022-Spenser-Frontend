@@ -24,6 +24,7 @@ const LoggedInNav = () => {
 
 	async function currentMonthCalculate() {
 		console.log(month_name)
+		sessionStorage.setItem("loading", "true");
         await
         conn
         .post(`/expense/calculateUserIncomeExpense/${auth.userID}`,
@@ -32,14 +33,16 @@ const LoggedInNav = () => {
         })
         .then(() => {
             console.log(`Dashboard calculate current month's data`)
+			sessionStorage.setItem("loading", "false");
         })
         .catch((err) => {
-        console.log(err);
+			console.log(err);
+			sessionStorage.setItem("loading", "false");
         });
 
 		await
 		conn
-		.post(`/expense/calculateMonthlyExpenseIncomeBalance/${this.userId}`,{})
+		.post(`/expense/calculateMonthlyExpenseIncomeBalance/${auth.userID}`,{})
 		.then(() => {
 			console.log("user monthly expense summary updated")
 		})

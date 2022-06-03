@@ -25,11 +25,11 @@ const FormSignUp = ({ submitForm }) => {
 				password: values.password,
 				name: values.name,
 			})
-			.then((user) => {
-				alert(
-					"Please check your email and verify your account before login!"
-				);
-			})
+			// .then((user) => {
+			// 	alert(
+			// 		"Please check your email and verify your account before login!"
+			// 	);
+			// })
 			.catch((e) => {
 				console.log(e);
 			});

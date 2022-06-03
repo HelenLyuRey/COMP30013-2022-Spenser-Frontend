@@ -12,6 +12,8 @@ import conn from '../util/conn';
 import AuthContext from "../context/auth-context";
 // import manualBackground from "../images/manual-background.png"
 
+import { CircleLoading } from "react-loadingg";
+
 const useStyles = makeStyles(() => ({
 	containerGrid: {
 		marginLeft: "5%",
@@ -34,14 +36,18 @@ const Dashboard = () => {
     const classes = useStyles();
     const [userInfo, setUserInfo] = useState("");
     const auth = useContext(AuthContext);
+    const [loading, setLoading] = useState(true);
+    
 
     useEffect(() => {
 		conn.get(`/user/profile/${auth.userID}`)
 			.then((user) => {
                 setUserInfo(user.data);
+                setLoading(false)
 			})
 			.catch((e) => {
 				console.log(e);
+                setLoading(false)
 			});
 	}, [userInfo, auth.userID]);
 
@@ -49,6 +55,7 @@ const Dashboard = () => {
         e.preventDefault();
         let month = document.getElementById("searchMonth").value;
         console.log(month)
+        sessionStorage.setItem("loading", "true");
         await
         conn
         .post(`/expense/calculateUserIncomeExpense/${auth.userID}`,
@@ -57,11 +64,24 @@ const Dashboard = () => {
         })
         .then(() => {
             console.log(`user expense summary updated for ${month}`)
+            sessionStorage.setItem("loading", "false");
         })
         .catch((err) => {
-        console.log(err);
+            console.log(err);
+            sessionStorage.setItem("loading", "false");
         });
+        
     }
+
+    if (sessionStorage.getItem("loading") === "true" || loading) {
+		return (
+        <div>
+            <LoggedInNav/>
+            <CircleLoading />
+        </div>
+        );
+	}
+
     return (
         <div>
             <div className="background"></div>
