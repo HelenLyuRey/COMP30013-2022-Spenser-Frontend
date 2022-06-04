@@ -638,10 +638,11 @@ export default {
             }
             
             // Get current month
-            const month = ["January","February","March","April","May",
-                "June","July","August","September","October","November","December"];
+            const month = ["Jan","Feb","Mar","Apr","May",
+				      "Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
             const d = new Date();
             let month_name = month[d.getMonth()];
+            let year_name = d.getFullYear().toString()
 
             // console.log(paras)
             // console.log(category)
@@ -657,7 +658,8 @@ export default {
                 entity: entity,
                 description: description,
                 expense: expense,
-                month: month_name
+                month: month_name,
+                year: year_name
               })
               .then((res) => {
                   // console.log(res.data)
@@ -671,7 +673,8 @@ export default {
               conn
               .post(`/expense/calculateUserIncomeExpense/${this.userId}`,
               {
-                month: month_name // Only display the current month
+                month: month_name, // Only display the current month
+                year: year_name
               })
               .then(() => {
                   console.log("user expense summary updated")

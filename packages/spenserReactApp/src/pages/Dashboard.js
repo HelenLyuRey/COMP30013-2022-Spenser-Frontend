@@ -10,6 +10,8 @@ import SpendingAccordions from '../components/dashboard/SpendingAccordion';
 import IncomeAccordions from '../components/dashboard/IncomeAccordion';
 import conn from '../util/conn';
 import AuthContext from "../context/auth-context";
+import YearMonthPicker from '../components/common/YearMonthPicker';
+import SearchIcon from '@mui/icons-material/Search';
 // import manualBackground from "../images/manual-background.png"
 
 import { CircleLoading } from "react-loadingg";
@@ -37,7 +39,21 @@ const Dashboard = () => {
     const [userInfo, setUserInfo] = useState("");
     const auth = useContext(AuthContext);
     const [loading, setLoading] = useState(true);
-    
+
+    function fullMonthName(partial_month){
+        const month_full = ["January","February","March","April","May",
+        "June","July","August","September","October","November","December"];
+        const month_part = ["Jan","Feb","Mar","Apr","May",
+                "Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+        let result
+        month_part.forEach((month, count)=>{
+            if(month === partial_month){
+                result = userInfo.year + " " + month_full[count]
+            }
+        })
+        return result
+    }
 
     useEffect(() => {
 		conn.get(`/user/profile/${auth.userID}`)
@@ -53,23 +69,40 @@ const Dashboard = () => {
 
     async function searchMonthlyInfo(e) {
         e.preventDefault();
-        let month = document.getElementById("searchMonth").value;
-        console.log(month)
+        let dateTime = sessionStorage.getItem("YearMonth").split(" ");
+        let month = dateTime[1] // in word
+        let year = dateTime[3] // in num in string format
+        // console.log(typeof month)
+        // console.log(typeof year)
         sessionStorage.setItem("loading", "true");
         await
         conn
         .post(`/expense/calculateUserIncomeExpense/${auth.userID}`,
         {
-            month: month // Only display the current month
+            month: month, // Only display the current month
+            year: year
         })
         .then(() => {
-            console.log(`user expense summary updated for ${month}`)
+            console.log(`user expense summary updated for ${year} ${month}`)
             sessionStorage.setItem("loading", "false");
         })
         .catch((err) => {
             console.log(err);
             sessionStorage.setItem("loading", "false");
         });
+
+        await
+		conn
+		.post(`/expense/calculateMonthlyExpenseIncomeBalance/${auth.userID}`,
+        {
+            year: year // Only display current year
+        })
+		.then(() => {
+			console.log(`user monthly expense summary updated for ${year}`)
+		})
+		.catch((err) => {
+		  console.log(err);
+		});
         
     }
 
@@ -88,19 +121,21 @@ const Dashboard = () => {
             <LoggedInNav/>
             <div className='dashboardMain'>
                 <div className='search-container'>
-                    <form>
-                        <input type="text" placeholder="Input month to search" id="searchMonth"/>
-                        <button onClick={searchMonthlyInfo}>
-                            Search
-                        </button>
-                    </form>
+                    <YearMonthPicker/>
+                    <div className='search-icon'>
+                        <SearchIcon 
+                            fontSize="large"
+                            color="action"
+                            onClick={searchMonthlyInfo}/>
+                    </div>
+                    
                 </div>
                 <Container className={classes.containerGrid}>
                     <Grid container spacing={2} >
                         <Grid item xs={3}>
                             <Card>
-                                <h1>{userInfo.month}</h1>
-                                <p>Month</p>
+                                <h1>{fullMonthName(userInfo.month)}</h1>
+                                <p>Date</p>
                             </Card>
                         </Grid>
 

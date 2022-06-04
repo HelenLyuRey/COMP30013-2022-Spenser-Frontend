@@ -22,9 +22,14 @@
     font-size: 2rem;
     border: none;
     cursor: pointer;
+    display: flex;
+}
+.search-icon{
+    display: grid;
+    place-items: center;
 }
 
-.search-container input{
+/* .search-container input{
     font-size: 1rem;
     height: 35px;
     width: 70%;
@@ -32,4 +37,4 @@
 
 .search-container button{
     height: 35px;
-}
+} */
