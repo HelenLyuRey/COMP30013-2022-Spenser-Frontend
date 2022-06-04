@@ -1,4 +1,4 @@
-**Spenser - A Personalised Conversational Expense Tracker**
+# Spenser - A Personalised Conversational Expense Tracker
 
 This is Spenser's front-end repository, please check [here](https://github.com/HelenLyuRey/COMP30013-2022-Spenser-Backend) for back-end.
 
@@ -12,11 +12,6 @@ It is a personalized companion VA that is built specifically for expense trackin
 
 (This software is initially made for University of Melbourne COMP30013 Advanced Studies in Computing subject.)
 
-## Table of contents
-* [User-guide](#user-guide)
-* [Usage](#usage)
-* [Deployed Version](#deployed-version)
-* [All features](#all-features)
 
 ## Spenser user guide
 You can checkout a video demo [here](https://www.youtube.com/watch?v=0FBSrelCGcc) to learn how to use spenser. Be aware that your voice input has to follow a certain format for the system to work.
