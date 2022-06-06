@@ -23,9 +23,11 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 # Requirenment 
-To use the 4 agents, you need to use Microsoft Edge browser and have Microsoft voice packages downloaded locally. The voices are from Microsoft Azure, currently is not free to use so I didn't use their cloud. 
-
-You can learn how to install voices in Windows 10 [here](https://support.microsoft.com/en-us/topic/download-voices-for-immersive-reader-read-mode-and-read-aloud-4c83a8d8-7486-42f7-8e46-2b0fdf753130)
+- VS Code or other IDE you prefer
+- Windows 10 
+- To use the 4 agents, you need to use Microsoft Edge browser and have English (US) language voice packages downloaded locally. The voices are from Microsoft Azure, currently is not free to use so I didn't use their cloud. 
+    - You can learn how to install voices in Windows 10 [here](https://support.microsoft.com/en-us/topic/download-voices-for-immersive-reader-read-mode-and-read-aloud-4c83a8d8-7486-42f7-8e46-2b0fdf753130)
+    - You may check the voice in your browser [here](https://mdn.github.io/web-speech-api/speak-easy-synthesis/), make sure you can see Aria, Emily, Jenny and Guys. 
 
 If you don't have the voices, you still can use the voice input expense tracker, just without the voice reponse (the text response is still avaliable). 
 
